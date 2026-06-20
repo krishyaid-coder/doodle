@@ -1,0 +1,27 @@
+[options]
+dialect = "extended"
+fail-on = "warning"
+
+[severity]
+"body/emoji" = "off"
+"body/too-long" = "info"
+
+[[paths]]
+glob = "**/experiments/**/SKILL.md"
+disabled = ["desc/vague-trigger"]
+
+[[rules]]
+id = "acme/no-customer-pii"
+kind = "pattern"
+pattern = "(?i)\\bcustomer_[a-z]+\\b"
+severity = "error"
+applies-to = "body"
+message = "Customer PII tokens are not allowed in skills."
+suggestion = "Use 'user_<role>' instead."
+
+[[rules]]
+id = "acme/require-team-tag"
+kind = "frontmatter-required"
+fields = ["team", "data-classification"]
+severity = "error"
+message = "Internal skills must declare 'team' and 'data-classification'."

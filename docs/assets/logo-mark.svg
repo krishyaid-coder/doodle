@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="doodle">
+  <title>doodle</title>
+  <!-- highlighter wash -->
+  <rect x="6" y="42" width="108" height="38" rx="19" fill="#FFE45E" opacity="0.85"/>
+  <!-- a scribble that resolves into a checkmark -->
+  <path
+    d="M 18 62
+       C 26 44, 38 44, 46 62
+       S 64 80, 72 62
+       L 86 84
+       L 108 30"
+    fill="none"
+    stroke="#1A1A1A"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

@@ -1,0 +1,2145 @@
+[
+  {
+    "repo": "ponytail",
+    "path": "/tmp/doodle-test/ponytail/skills/ponytail/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 606 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      }
+    ]
+  },
+  {
+    "repo": "ponytail",
+    "path": "/tmp/doodle-test/ponytail/skills/ponytail-audit/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail-audit/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 400 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  },
+  {
+    "repo": "ponytail",
+    "path": "/tmp/doodle-test/ponytail/skills/ponytail-debt/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail-debt/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 386 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  },
+  {
+    "repo": "ponytail",
+    "path": "/tmp/doodle-test/ponytail/skills/ponytail-gain/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail-gain/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 302 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  },
+  {
+    "repo": "ponytail",
+    "path": "/tmp/doodle-test/ponytail/skills/ponytail-help/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "body/absolute-user-path",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail-help/SKILL.md",
+        "line": 51,
+        "column": 19,
+        "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+        "suggestion": "Use relative paths, environment variables, or document the path as user-provided."
+      }
+    ]
+  },
+  {
+    "repo": "ponytail",
+    "path": "/tmp/doodle-test/ponytail/skills/ponytail-review/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail-review/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 456 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail-review/SKILL.md",
+        "line": 31,
+        "column": 1,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail-review/SKILL.md",
+        "line": 34,
+        "column": 1,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail-review/SKILL.md",
+        "line": 36,
+        "column": 1,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail-review/SKILL.md",
+        "line": 38,
+        "column": 1,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail-review/SKILL.md",
+        "line": 40,
+        "column": 1,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/ponytail/skills/ponytail-review/SKILL.md",
+        "line": 42,
+        "column": 1,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 324 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+        "line": 105,
+        "column": 5,
+        "message": "Body contains emoji ('\u26a0'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+        "line": 116,
+        "column": 3,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+        "line": 117,
+        "column": 3,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+        "line": 118,
+        "column": 3,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+        "line": 119,
+        "column": 3,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+        "line": 122,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+        "line": 123,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+        "line": 124,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/algorithmic-art/SKILL.md",
+        "line": 125,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/brand-guidelines/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/brand-guidelines/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/canvas-design/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/canvas-design/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 289 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/claude-api/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/claude-api/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 1068 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/claude-api/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/doc-coauthoring/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/doc-coauthoring/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 428 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/docx/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/docx/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 785 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/vague-trigger",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/docx/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description uses trigger phrase(s) that overlap Claude's default behavior: 'general coding', 'coding tasks'. The skill may never fire.",
+        "suggestion": "Replace with concrete, domain-specific phrases the user is likely to type."
+      },
+      {
+        "rule_id": "body/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/docx/SKILL.md",
+        "line": 6,
+        "column": 1,
+        "message": "Body is 585 lines (soft cap 500). Long bodies bloat every agent invocation; prefer progressive disclosure.",
+        "suggestion": "Move detail into separate files referenced from the body, or split into multiple skills."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/frontend-design/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/frontend-design/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/internal-comms/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/internal-comms/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 329 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/internal-comms/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 277 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 17,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\ude80'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 58,
+        "column": 28,
+        "message": "Body contains emoji ('\ud83d\udccb'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 62,
+        "column": 4,
+        "message": "Body contains emoji ('\u26a1'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 66,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\udc0d'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 83,
+        "column": 4,
+        "message": "Body contains emoji ('\u26a1'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 84,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\udc0d'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 155,
+        "column": 9,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 198,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\udcda'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 204,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\udccb'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 216,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\udc0d'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 223,
+        "column": 4,
+        "message": "Body contains emoji ('\u26a1'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/mcp-builder/SKILL.md",
+        "line": 231,
+        "column": 4,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/pdf/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/pdf/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 437 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/pdf/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/pptx/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/pptx/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 688 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/pptx/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/pptx/SKILL.md",
+        "line": 165,
+        "column": 3,
+        "message": "Body contains emoji ('\u26a0'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/skill-creator/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/skill-creator/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 319 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "body/absolute-user-path",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/skill-creator/SKILL.md",
+        "line": 371,
+        "column": 27,
+        "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+        "suggestion": "Use relative paths, environment variables, or document the path as user-provided."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/slack-gif-creator/SKILL.md",
+    "findings": []
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/theme-factory/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/theme-factory/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 262 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/theme-factory/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/web-artifacts-builder/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/web-artifacts-builder/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 288 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/web-artifacts-builder/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/web-artifacts-builder/SKILL.md",
+        "line": 33,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/web-artifacts-builder/SKILL.md",
+        "line": 34,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/web-artifacts-builder/SKILL.md",
+        "line": 35,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/web-artifacts-builder/SKILL.md",
+        "line": 36,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/web-artifacts-builder/SKILL.md",
+        "line": 37,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/web-artifacts-builder/SKILL.md",
+        "line": 38,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/web-artifacts-builder/SKILL.md",
+        "line": 39,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/webapp-testing/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/webapp-testing/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/webapp-testing/SKILL.md",
+        "line": 80,
+        "column": 1,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/webapp-testing/SKILL.md",
+        "line": 81,
+        "column": 1,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "anthropic",
+    "path": "/tmp/doodle-test/anthropic-skills/skills/xlsx/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/xlsx/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 941 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/vague-trigger",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/xlsx/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description uses trigger phrase(s) that overlap Claude's default behavior: 'any task'. The skill may never fire.",
+        "suggestion": "Replace with concrete, domain-specific phrases the user is likely to type."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/xlsx/SKILL.md",
+        "line": 103,
+        "column": 5,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/anthropic-skills/skills/xlsx/SKILL.md",
+        "line": 118,
+        "column": 5,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/brainstorming/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/brainstorming/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      }
+    ]
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/dispatching-parallel-agents/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/dispatching-parallel-agents/SKILL.md",
+        "line": 117,
+        "column": 3,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/dispatching-parallel-agents/SKILL.md",
+        "line": 118,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/dispatching-parallel-agents/SKILL.md",
+        "line": 120,
+        "column": 3,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/dispatching-parallel-agents/SKILL.md",
+        "line": 121,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/dispatching-parallel-agents/SKILL.md",
+        "line": 123,
+        "column": 3,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/dispatching-parallel-agents/SKILL.md",
+        "line": 124,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/dispatching-parallel-agents/SKILL.md",
+        "line": 126,
+        "column": 3,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/dispatching-parallel-agents/SKILL.md",
+        "line": 127,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/executing-plans/SKILL.md",
+    "findings": []
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/finishing-a-development-branch/SKILL.md",
+    "findings": []
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/receiving-code-review/SKILL.md",
+    "findings": []
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/requesting-code-review/SKILL.md",
+    "findings": []
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/subagent-driven-development/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/subagent-driven-development/SKILL.md",
+        "line": 150,
+        "column": 22,
+        "message": "Body contains emoji ('\u26a0'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/subagent-driven-development/SKILL.md",
+        "line": 152,
+        "column": 31,
+        "message": "Body contains emoji ('\u26a0'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/systematic-debugging/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/systematic-debugging/SKILL.md",
+        "line": 108,
+        "column": 60,
+        "message": "Body contains emoji ('\u2713'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/test-driven-development/SKILL.md",
+    "findings": []
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/using-git-worktrees/SKILL.md",
+    "findings": []
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/using-superpowers/SKILL.md",
+    "findings": []
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/verification-before-completion/SKILL.md",
+    "findings": []
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/writing-plans/SKILL.md",
+    "findings": []
+  },
+  {
+    "repo": "obra",
+    "path": "/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "body/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 5,
+        "column": 1,
+        "message": "Body is 685 lines (soft cap 500). Long bodies bloat every agent invocation; prefer progressive disclosure.",
+        "suggestion": "Move detail into separate files referenced from the body, or split into multiple skills."
+      },
+      {
+        "rule_id": "body/absolute-user-path",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 12,
+        "column": 436,
+        "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+        "suggestion": "Use relative paths, environment variables, or document the path as user-provided."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 210,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 211,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 269,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 270,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 271,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 272,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 283,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 284,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 285,
+        "column": 3,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 286,
+        "column": 3,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 595,
+        "column": 5,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 599,
+        "column": 5,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 603,
+        "column": 5,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/obra-superpowers/skills/writing-skills/SKILL.md",
+        "line": 610,
+        "column": 5,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/README/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "parse/missing-frontmatter",
+        "severity": "error",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 1,
+        "column": 1,
+        "message": "SKILL.md must start with a YAML frontmatter block delimited by '---'.",
+        "suggestion": null
+      },
+      {
+        "rule_id": "desc/too-short",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 1,
+        "column": 1,
+        "message": "Frontmatter is missing the 'description' field.",
+        "suggestion": "Add a 1-2 sentence description with concrete trigger phrases."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 9,
+        "column": 5,
+        "message": "Body contains emoji ('\ud83e\udde0'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 10,
+        "column": 5,
+        "message": "Body contains emoji ('\ud83c\udfaf'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 11,
+        "column": 5,
+        "message": "Body contains emoji ('\ud83d\udea8'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 12,
+        "column": 5,
+        "message": "Body contains emoji ('\ud83d\udccb'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 13,
+        "column": 5,
+        "message": "Body contains emoji ('\ud83d\udd04'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 14,
+        "column": 5,
+        "message": "Body contains emoji ('\ud83d\udcad'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 15,
+        "column": 5,
+        "message": "Body contains emoji ('\ud83c\udfaf'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 16,
+        "column": 5,
+        "message": "Body contains emoji ('\ud83d\ude80'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 17,
+        "column": 5,
+        "message": "Body contains emoji ('\ud83d\udd04'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 42,
+        "column": 35,
+        "message": "Body contains emoji ('\ud83c\udfd7'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 43,
+        "column": 43,
+        "message": "Body contains emoji ('\ud83d\ude80'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/README.md",
+        "line": 44,
+        "column": 37,
+        "message": "Body contains emoji ('\ud83e\udd84'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/TEMPLATE/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 14,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83e\udde0'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 20,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83c\udfaf'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 35,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\udea8'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 45,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\udccb'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 55,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\udd04'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 75,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\udcad'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 81,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83c\udfaf'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 88,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\ude80'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 94,
+        "column": 4,
+        "message": "Body contains emoji ('\ud83d\udd04'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "fm/name-mismatch-dir",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 2,
+        "column": 1,
+        "message": "Frontmatter name 'Agent Name' doesn't match parent directory 'personas'. Claude resolves skills by directory; mismatch causes confusion.",
+        "suggestion": "Rename the directory to 'Agent Name' or change the name field to 'personas'."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 4,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'color' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'color', or switch to the extended dialect if you need it."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 5,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'emoji' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'emoji', or switch to the extended dialect if you need it."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 6,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'vibe' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'vibe', or switch to the extended dialect if you need it."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/agents/personas/TEMPLATE.md",
+        "line": 7,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'tools' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'tools', or switch to the extended dialect if you need it."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/a11y-audit/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering-team/a11y-audit/skills/a11y-audit/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 338 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/ab-test-setup/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/ab-test-setup/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 341 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/ab-test-setup/SKILL.md",
+        "line": 5,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/ad-creative/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/ad-creative/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 435 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/ad-creative/SKILL.md",
+        "line": 152,
+        "column": 8,
+        "message": "Body contains emoji ('\ud83d\udd25'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/ad-creative/SKILL.md",
+        "line": 246,
+        "column": 61,
+        "message": "Body contains emoji ('\ud83d\udd34'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/ad-creative/SKILL.md",
+        "line": 5,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/adversarial-reviewer/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering-team/skills/adversarial-reviewer/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 355 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "fm/missing-allowed-tools",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering-team/skills/adversarial-reviewer/SKILL.md",
+        "line": 1,
+        "column": 1,
+        "message": "Body references tools (Bash/Write/Edit/subprocess) but frontmatter omits 'allowed-tools'. Explicit scoping limits blast radius.",
+        "suggestion": "Add 'allowed-tools: [Read, Write, Bash]' (or the minimal set this skill actually needs)."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/aeo/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/aeo/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 736 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "body/absolute-user-path",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/aeo/SKILL.md",
+        "line": 73,
+        "column": 12,
+        "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+        "suggestion": "Use relative paths, environment variables, or document the path as user-provided."
+      },
+      {
+        "rule_id": "body/absolute-user-path",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/aeo/SKILL.md",
+        "line": 196,
+        "column": 4,
+        "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+        "suggestion": "Use relative paths, environment variables, or document the path as user-provided."
+      },
+      {
+        "rule_id": "body/absolute-user-path",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/aeo/SKILL.md",
+        "line": 197,
+        "column": 4,
+        "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+        "suggestion": "Use relative paths, environment variables, or document the path as user-provided."
+      },
+      {
+        "rule_id": "body/absolute-user-path",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/aeo/SKILL.md",
+        "line": 198,
+        "column": 4,
+        "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+        "suggestion": "Use relative paths, environment variables, or document the path as user-provided."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/agent-designer/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering/skills/agent-designer/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 521 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering/skills/agent-designer/SKILL.md",
+        "line": 52,
+        "column": 159,
+        "message": "Body contains emoji ('\u2713'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/agent-protocol/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 279 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "body/absolute-user-path",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 189,
+        "column": 101,
+        "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+        "suggestion": "Use relative paths, environment variables, or document the path as user-provided."
+      },
+      {
+        "rule_id": "body/absolute-user-path",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 189,
+        "column": 211,
+        "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+        "suggestion": "Use relative paths, environment variables, or document the path as user-provided."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 195,
+        "column": 17,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 196,
+        "column": 15,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 197,
+        "column": 14,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 198,
+        "column": 23,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 199,
+        "column": 22,
+        "message": "Body contains emoji ('\u274c'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 200,
+        "column": 14,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 201,
+        "column": 16,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 311,
+        "column": 25,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 312,
+        "column": 26,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 313,
+        "column": 22,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 314,
+        "column": 29,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/c-level-advisor/skills/agent-protocol/SKILL.md",
+        "line": 5,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/agent-workflow-designer/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering/skills/agent-workflow-designer/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 368 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/agenthub/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering/agenthub/skills/agenthub/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 420 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/vague-trigger",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering/agenthub/skills/agenthub/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description uses trigger phrase(s) that overlap Claude's default behavior: 'any task'. The skill may never fire.",
+        "suggestion": "Replace with concrete, domain-specific phrases the user is likely to type."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering/agenthub/skills/agenthub/SKILL.md",
+        "line": 5,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/agile-product-owner/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/product-team/agile-product-owner/skills/agile-product-owner/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 310 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/product-team/agile-product-owner/skills/agile-product-owner/SKILL.md",
+        "line": 4,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'not_for' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'not_for', or switch to the extended dialect if you need it."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/product-team/agile-product-owner/skills/agile-product-owner/SKILL.md",
+        "line": 5,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'triggers' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'triggers', or switch to the extended dialect if you need it."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/ai-act-readiness/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/compliance-os/skills/ai-act-readiness/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 251 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/compliance-os/skills/ai-act-readiness/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/ai-security/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering-team/skills/ai-security/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 254 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/aims-audit/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/no-trigger-phrase",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/compliance-os/skills/aims-audit/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+        "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/analytics-tracking/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/analytics-tracking/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 666 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/analytics-tracking/SKILL.md",
+        "line": 72,
+        "column": 3,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/analytics-tracking/SKILL.md",
+        "line": 139,
+        "column": 6,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/analytics-tracking/SKILL.md",
+        "line": 140,
+        "column": 6,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/analytics-tracking/SKILL.md",
+        "line": 141,
+        "column": 6,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/analytics-tracking/SKILL.md",
+        "line": 142,
+        "column": 6,
+        "message": "Body contains emoji ('\u2705'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/analytics-tracking/SKILL.md",
+        "line": 143,
+        "column": 6,
+        "message": "Body contains emoji ('\u26a0'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/analytics-tracking/SKILL.md",
+        "line": 144,
+        "column": 6,
+        "message": "Body contains emoji ('\u26a0'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/analytics-tracking/SKILL.md",
+        "line": 371,
+        "column": 55,
+        "message": "Body contains emoji ('\ud83d\udd34'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/analytics-tracking/SKILL.md",
+        "line": 5,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/andreessen/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/productivity/andreessen/skills/andreessen/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 983 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/productivity/andreessen/skills/andreessen/SKILL.md",
+        "line": 5,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/api-design-reviewer/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering/skills/api-design-reviewer/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 345 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/api-test-suite-builder/SKILL.md",
+    "findings": []
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/app-store-optimization/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/app-store-optimization/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 532 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/app-store-optimization/SKILL.md",
+        "line": 486,
+        "column": 61,
+        "message": "Body contains emoji ('\ud83d\udd34'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/marketing-skill/skills/app-store-optimization/SKILL.md",
+        "line": 4,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'triggers' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'triggers', or switch to the extended dialect if you need it."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/apple-hig-expert/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/product-team/apple-hig-expert/skills/apple-hig-expert/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 442 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "body/emoji",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/product-team/apple-hig-expert/skills/apple-hig-expert/SKILL.md",
+        "line": 102,
+        "column": 68,
+        "message": "Body contains emoji ('\ud83d\udd34'). Anthropic style guide discourages emoji in skill bodies.",
+        "suggestion": "Replace with text equivalents (e.g. 'Yes'/'No' instead of \u2705/\u274c)."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/product-team/apple-hig-expert/skills/apple-hig-expert/SKILL.md",
+        "line": 5,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/atlassian-admin/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/project-management/skills/atlassian-admin/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 460 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/atlassian-templates/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/project-management/skills/atlassian-templates/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 312 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/autoresearch-agent/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering/autoresearch-agent/skills/autoresearch-agent/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 542 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      },
+      {
+        "rule_id": "body/absolute-user-path",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering/autoresearch-agent/skills/autoresearch-agent/SKILL.md",
+        "line": 67,
+        "column": 31,
+        "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+        "suggestion": "Use relative paths, environment variables, or document the path as user-provided."
+      },
+      {
+        "rule_id": "body/absolute-user-path",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering/autoresearch-agent/skills/autoresearch-agent/SKILL.md",
+        "line": 82,
+        "column": 13,
+        "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+        "suggestion": "Use relative paths, environment variables, or document the path as user-provided."
+      },
+      {
+        "rule_id": "fm/unknown-field",
+        "severity": "info",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering/autoresearch-agent/skills/autoresearch-agent/SKILL.md",
+        "line": 5,
+        "column": 1,
+        "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+        "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it."
+      }
+    ]
+  },
+  {
+    "repo": "alirezarezvani",
+    "path": "/tmp/doodle-test/alirezarezvani/.gemini/skills/aws-solution-architect/SKILL.md",
+    "findings": [
+      {
+        "rule_id": "desc/too-long",
+        "severity": "warning",
+        "file": "/private/tmp/doodle-test/alirezarezvani/engineering-team/skills/aws-solution-architect/SKILL.md",
+        "line": 3,
+        "column": 1,
+        "message": "Description is 302 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+        "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body."
+      }
+    ]
+  }
+]

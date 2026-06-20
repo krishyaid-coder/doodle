@@ -1,0 +1,70 @@
+name: "doodle"
+description: "Lint Claude SKILL.md files for quality issues."
+author: "doodle contributors"
+branding:
+  icon: "edit-3"
+  color: "yellow"
+
+inputs:
+  path:
+    description: "File or directory to lint (recursive for directories)."
+    required: false
+    default: "."
+  format:
+    description: "Output format: text or json."
+    required: false
+    default: "text"
+  strict:
+    description: "Promote info → warning, warning → error."
+    required: false
+    default: "false"
+  ignore:
+    description: "Comma-separated rule IDs to disable (e.g. 'desc/too-long,body/emoji')."
+    required: false
+    default: ""
+  fail-on:
+    description: "Exit non-zero on: 'error', 'warning' (default), or 'never'."
+    required: false
+    default: "warning"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install doodle
+      shell: bash
+      run: pip install --quiet doodle-lint
+
+    - name: Run doodle
+      shell: bash
+      env:
+        DOODLE_PATH: ${{ inputs.path }}
+        DOODLE_FORMAT: ${{ inputs.format }}
+        DOODLE_STRICT: ${{ inputs.strict }}
+        DOODLE_IGNORE: ${{ inputs.ignore }}
+        DOODLE_FAIL_ON: ${{ inputs.fail-on }}
+      run: |
+        args=("$DOODLE_PATH" "--format=$DOODLE_FORMAT" "--no-color")
+        if [ "$DOODLE_STRICT" = "true" ]; then
+          args+=("--strict")
+        fi
+        if [ -n "$DOODLE_IGNORE" ]; then
+          IFS=',' read -ra rules <<< "$DOODLE_IGNORE"
+          for r in "${rules[@]}"; do
+            args+=("--ignore=$r")
+          done
+        fi
+        set +e
+        doodle "${args[@]}"
+        rc=$?
+        set -e
+        case "$DOODLE_FAIL_ON" in
+          never) exit 0 ;;
+          warning) exit $rc ;;
+          error) [ "$rc" -eq 2 ] && exit 2 || exit 0 ;;
+          *) echo "doodle: invalid fail-on value '$DOODLE_FAIL_ON'"; exit 3 ;;
+        esac
