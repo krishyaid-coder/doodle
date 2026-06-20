@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for considering a contribution. doodle is small on purpose, but it grows by community signal — new rules, fixture skills, dialects, formatters.
+Thanks for considering a contribution. doodle is small on purpose, but it grows by community signal with new rules, fixture skills, dialects, formatters.
 
 ## Quick links
 
@@ -11,7 +11,7 @@ Thanks for considering a contribution. doodle is small on purpose, but it grows 
 
 ## Ground rules
 
-1. **Open an issue before a large PR.** Especially for new rules — we want to discuss the citation and false-positive risk together.
+1. **Open an issue before a large PR.** Especially for new rules, I want to discuss the citation and false-positive risk together.
 2. **Every rule needs a citation.** Anthropic docs, a community issue, or a sample frequency. No "I think this is bad."
 3. **Tests required.** A rule PR without a fixture + a test will be asked to add them.
 4. **Severity is conservative.** `warning` is the default. `error` is for "the skill will not load or trigger."
