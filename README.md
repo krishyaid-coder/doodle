@@ -194,10 +194,10 @@ flowchart LR
     E -->|json| G[CI / dashboard]
 ```
 
-- **Parser** — splits frontmatter from body, auto-detects dialect.
-- **Rule registry** — runs built-in + custom rules, applies severity overrides, filters by dialect and per-path globs.
-- **Custom rules** — pattern + frontmatter-required, loaded from `.doodle.toml` at startup, plug in alongside built-ins.
-- **Formatter** — renders findings as colored text or JSON for CI.
+- **Parser**: splits frontmatter from body, auto-detects dialect.
+- **Rule registry**: runs built-in + custom rules, applies severity overrides, filters by dialect and per-path globs.
+- **Custom rules**: pattern + frontmatter-required, loaded from `.doodle.toml` at startup, plug in alongside built-ins.
+- **Formatter**: renders findings as colored text or JSON for CI.
 
 Full component table, sequence diagrams, and extension points: [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md).
 
@@ -207,8 +207,8 @@ Full component table, sequence diagrams, and extension points: [docs/ARCHITECTUR
 
 Two `SKILL.md` dialects exist in the wild. doodle auto-detects.
 
-- **anthropic** — minimal frontmatter: `name`, `description`, optional `license`. Used by [`anthropics/skills`](https://github.com/anthropics/skills).
-- **extended** — community schema with `version`, `author`, `tags`, `allowed-tools`. Used by [`alirezarezvani/claude-skills`](https://github.com/alirezarezvani/claude-skills), [`jeremylongshore/claude-code-plugins-plus-skills`](https://github.com/jeremylongshore/claude-code-plugins-plus-skills), [`DietrichGebert/ponytail`](https://github.com/DietrichGebert/ponytail).
+- **anthropic**: minimal frontmatter: `name`, `description`, optional `license`. Used by [`anthropics/skills`](https://github.com/anthropics/skills).
+- **extended**: community schema with `version`, `author`, `tags`, `allowed-tools`. Used by [`alirezarezvani/claude-skills`](https://github.com/alirezarezvani/claude-skills), [`jeremylongshore/claude-code-plugins-plus-skills`](https://github.com/jeremylongshore/claude-code-plugins-plus-skills), [`DietrichGebert/ponytail`](https://github.com/DietrichGebert/ponytail).
 
 Some rules apply to both. Some are dialect-scoped. We don't pretend the split doesn't exist.
 
