@@ -106,7 +106,7 @@ Requires Python 3.10+. Two runtime deps: `PyYAML` + `tomli` (on <3.11).
   <img src="./docs/assets/mascot-no-bg.svg" alt="doodle mascot" width="160"/>
 </td>
 <td>
-  <em>"Hi! I'm doodle. I just read your <code>SKILL.md</code> — found a couple of things. The description is doing too much, and there's a <code>/Users/...</code> path on line 47 that won't survive on anyone else's machine. Want me to show you?"</em>
+  <em>"Hi! I'm doodle. I just read your <code>SKILL.md</code>, I've found a couple of things. The description is doing too much, and there's a <code>/Users/...</code> path on line 47 that won't survive on anyone else's machine. Want me to show you?"</em>
   <br/><br/>
   <sub>Sub-second feedback. Citations on every finding. No LLM bill.</sub>
 </td>
