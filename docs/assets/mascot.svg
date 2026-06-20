@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="doodle mascot">
+  <title>doodle — the mascot</title>
+
+  <!-- background -->
+  <rect width="400" height="400" fill="#BEF264"/>
+
+  <!-- soft ground shadow -->
+  <ellipse cx="220" cy="340" rx="120" ry="10" fill="#1A1A1A" opacity="0.12"/>
+
+  <!-- body (rounded blob, slightly wider at the bottom for a friendly stance) -->
+  <path d="M 220 110
+           C 295 110, 345 170, 345 240
+           C 345 305, 295 340, 220 340
+           C 145 340, 95 305, 95 240
+           C 95 170, 145 110, 220 110 Z"
+        fill="white" stroke="#1A1A1A" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- left eye -->
+  <ellipse cx="180" cy="220" rx="10" ry="14" fill="#1A1A1A"/>
+  <circle cx="184" cy="215" r="3" fill="white"/>
+
+  <!-- right eye -->
+  <ellipse cx="260" cy="220" rx="10" ry="14" fill="#1A1A1A"/>
+  <circle cx="264" cy="215" r="3" fill="white"/>
+
+  <!-- smile -->
+  <path d="M 175 270 Q 220 305, 265 270"
+        fill="none" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- left cheek lines -->
+  <g stroke="#65A30D" stroke-width="3" stroke-linecap="round" fill="none">
+    <line x1="138" y1="258" x2="155" y2="256"/>
+    <line x1="138" y1="270" x2="155" y2="268"/>
+  </g>
+
+  <!-- right cheek lines -->
+  <g stroke="#65A30D" stroke-width="3" stroke-linecap="round" fill="none">
+    <line x1="285" y1="256" x2="302" y2="258"/>
+    <line x1="285" y1="268" x2="302" y2="270"/>
+  </g>
+
+  <!-- "found something!" exclamation -->
+  <g fill="#1A1A1A">
+    <path d="M 358 120 L 350 195 L 342 195 L 350 120 Z"/>
+    <circle cx="346" cy="215" r="6"/>
+  </g>
+
+  <!-- linter badge: small checkmark sticker on the bottom-left -->
+  <g transform="translate(78 300)">
+    <circle r="26" fill="white" stroke="#047857" stroke-width="4"/>
+    <path d="M -11 0 L -3 9 L 13 -10"
+          fill="none" stroke="#047857" stroke-width="5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- tiny doodle squiggle floating top-left for whimsy -->
+  <path d="M 50 80 q 8 -8, 16 0 t 16 0 t 16 0"
+        fill="none" stroke="#1A1A1A" stroke-width="3"
+        stroke-linecap="round" opacity="0.5"/>
+</svg>

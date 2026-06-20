@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="./assets/logo-wordmark.svg" alt="doodle" width="280"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/logo-wordmark-dark.svg">
+    <img src="./assets/logo-wordmark-light.svg" alt="doodle" width="280"/>
+  </picture>
 </p>
 
 # Architecture

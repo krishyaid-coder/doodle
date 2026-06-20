@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="./docs/assets/logo-banner.svg" alt="doodle" width="520"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./docs/assets/logo-banner-dark.svg">
+    <img src="./docs/assets/logo-banner-light.svg" alt="doodle" width="520"/>
+  </picture>
 </p>
 
 <p align="center">
@@ -92,6 +95,23 @@ pip install doodle-lint
 ```
 
 Requires Python 3.10+. Two runtime deps: `PyYAML` + `tomli` (on <3.11).
+
+---
+
+## Meet doodle
+
+<table>
+<tr>
+<td width="200" align="center">
+  <img src="./docs/assets/mascot-no-bg.svg" alt="doodle mascot" width="160"/>
+</td>
+<td>
+  <em>"Hi! I'm doodle. I just read your <code>SKILL.md</code> — found a couple of things. The description is doing too much, and there's a <code>/Users/...</code> path on line 47 that won't survive on anyone else's machine. Want me to show you?"</em>
+  <br/><br/>
+  <sub>Sub-second feedback. Citations on every finding. No LLM bill.</sub>
+</td>
+</tr>
+</table>
 
 ---
 
@@ -230,17 +250,17 @@ See [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for how the current code abso
 
 ## Why this exists, in one paragraph
 
-A linter is not impact. **Adopted rules** are impact. I am not building this because there should be a linter; I am building it because there are 5,000 skills in the wild, 40 to 60% have a clear quality smell, Anthropic's own issue tracker quantifies the failure modes, and nobody has put together the static-checks half + the trigger-accuracy half before. The longer version, including the honest risks: [docs/WHY.md](./docs/WHY.md).
+A linter is not impact. **Adopted rules** are impact. I am not building this because there should be a linter; I am building it because there are 5,000 skills in the wild, 40–60% have a clear quality smell, Anthropic's own issue tracker quantifies the failure modes, and nobody has put together the static-checks half + the trigger-accuracy half before. The longer version, including the honest risks: [docs/WHY.md](./docs/WHY.md).
 
 ---
 
 ## Docs
 
-- [Architecture](./docs/ARCHITECTURE.md): diagrams, components, extension points, trade-offs
-- [Rule spec](./RULES.md): every rule with citation, example, in-sample frequency
-- [Extending](./docs/EXTENDING.md): add a rule in 12 lines
-- [Why doodle](./docs/WHY.md): the impact argument
-- [Contributing](./CONTRIBUTING.md): ground rules + PR checklist
+- [Architecture](./docs/ARCHITECTURE.md) — diagrams, components, extension points, trade-offs
+- [Rule spec](./RULES.md) — every rule with citation, example, in-sample frequency
+- [Extending](./docs/EXTENDING.md) — add a rule in 12 lines
+- [Why doodle](./docs/WHY.md) — the impact argument
+- [Contributing](./CONTRIBUTING.md) — ground rules + PR checklist
 
 ---
 

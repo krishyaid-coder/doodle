@@ -3,13 +3,16 @@
   <defs>
     <style>
       .word { font-family: ui-rounded, "SF Pro Rounded", "Quicksand", "Comfortaa", system-ui, sans-serif;
-              font-weight: 700; font-size: 96px; fill: #1A1A1A; letter-spacing: -2px; }
+              font-weight: 700; font-size: 96px; fill: #6EE7B7; letter-spacing: -2px; }
     </style>
   </defs>
   <text x="20" y="90" class="word">doodle</text>
-  <!-- the spellcheck squiggle: this IS the logo concept -->
+  <!-- sparkle accent -->
+  <path d="M 290 22 L 294 34 L 306 38 L 294 42 L 290 54 L 286 42 L 274 38 L 286 34 Z"
+        fill="#34D399"/>
+  <!-- spellcheck squiggle -->
   <path
     d="M 22 110
        q 9 -9, 18 0 t 18 0 t 18 0 t 18 0 t 18 0 t 18 0 t 18 0 t 18 0 t 18 0 t 18 0 t 18 0 t 18 0 t 18 0"
-    fill="none" stroke="#E5484D" stroke-width="4" stroke-linecap="round"/>
+    fill="none" stroke="#FB7185" stroke-width="4" stroke-linecap="round"/>
 </svg>

@@ -3,31 +3,34 @@
   <defs>
     <style>
       .word { font-family: ui-rounded, "SF Pro Rounded", "Quicksand", "Comfortaa", system-ui, sans-serif;
-              font-weight: 700; font-size: 88px; fill: #1A1A1A; letter-spacing: -2px; }
+              font-weight: 700; font-size: 88px; fill: #047857; letter-spacing: -2px; }
       .tag  { font-family: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
-              font-size: 16px; fill: #6B6B6B; letter-spacing: 0.5px; }
+              font-size: 16px; fill: #4B5563; letter-spacing: 0.5px; }
     </style>
   </defs>
 
   <!-- mark -->
   <g transform="translate(8 18)">
-    <rect x="6" y="42" width="108" height="38" rx="19" fill="#FFE45E" opacity="0.85"/>
+    <rect x="6" y="42" width="108" height="38" rx="19" fill="#BEF264"/>
     <path
       d="M 18 62 C 26 44, 38 44, 46 62 S 64 80, 72 62 L 86 84 L 108 30"
-      fill="none" stroke="#1A1A1A" stroke-width="8"
+      fill="none" stroke="#064E3B" stroke-width="8"
       stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 
   <!-- wordmark -->
   <text x="148" y="98" class="word">doodle</text>
 
+  <!-- sparkle accent -->
+  <path d="M 408 38 L 412 50 L 424 54 L 412 58 L 408 70 L 404 58 L 392 54 L 404 50 Z"
+        fill="#10B981"/>
+
   <!-- spellcheck squiggle under the word -->
   <path
-    d="M 150 116
+    d="M 150 118
        q 8 -8, 16 0 t 16 0 t 16 0 t 16 0 t 16 0 t 16 0 t 16 0 t 16 0 t 16 0"
-    fill="none" stroke="#E5484D" stroke-width="3"
-    stroke-linecap="round"/>
+    fill="none" stroke="#E5484D" stroke-width="3" stroke-linecap="round"/>
 
   <!-- tagline -->
-  <text x="150" y="142" class="tag">a linter for Claude SKILL.md files</text>
+  <text x="150" y="144" class="tag">a linter for Claude SKILL.md files</text>
 </svg>
