@@ -19,7 +19,7 @@
 
 ## What it is
 
-In late 2025 Anthropic introduced `SKILL.md` — markdown with YAML frontmatter that teaches Claude a new capability. By mid-2026 there are **5,000+ published skills** and Anthropic's own issue tracker says **80% of trigger failures come from vague descriptions** ([anthropics/skills#267](https://github.com/anthropics/skills/issues/267)).
+In late 2025 Anthropic introduced `SKILL.md`, a markdown with YAML frontmatter that teaches Claude a new capability. By mid-2026 there are **5,000+ published skills** and Anthropic's own issue tracker says **80% of trigger failures come from vague descriptions** ([anthropics/skills#267](https://github.com/anthropics/skills/issues/267)).
 
 There's no quality bar. Marketplaces accept anything. Authors can't tell if their skill will fire until production.
 
@@ -36,13 +36,13 @@ That's it. No LLM calls, no API keys, no cloud.
 
 ## Quick taste
 
-A real skill from the wild — trimmed for length, but the smells are verbatim:
+A real skill from the wild, trimmed for length, but the smells are verbatim:
 
 <table>
 <tr>
 <td>
 
-**Before** ❌
+**Before** 
 
 ```yaml
 ---
@@ -138,7 +138,7 @@ doodle --ignore=body/emoji ./skills
 
 ## What it catches (v0)
 
-12 rules across 4 categories. Each rule has a citation to Anthropic docs or community evidence — never just "we think this is bad."
+12 rules across 4 categories. Each rule has a citation to Anthropic docs or community evidence, never just "we think this is bad."
 
 | Rule | Severity | What |
 |---|---|---|
@@ -218,8 +218,8 @@ Need real Python logic? See [docs/EXTENDING.md](./docs/EXTENDING.md#add-a-rule-1
 
 | Phase | What | Status |
 |---|---|---|
-| **v0** | Static linter — 12 rules, CLI + GitHub Action | ✅ shipped |
-| **v0.2** | `.doodle.toml` config, custom pattern + required-fields rules, per-path overrides, severity overrides | ✅ shipped |
+| **v0** | Static linter — 12 rules, CLI + GitHub Action | shipped |
+| **v0.2** | `.doodle.toml` config, custom pattern + required-fields rules, per-path overrides, severity overrides | shipped |
 | **v1** | `--fix` for safe rules, SARIF output, plugin entry points (`doodle-rules-*` packages) | next |
 | **Phase 2** | `doodle eval` — trigger-accuracy scoring on top of [Promptfoo's `skill-used` assertion](https://www.promptfoo.dev/docs/guides/test-agent-skills/) | designed |
 | **Phase 3** | Hosted scanner + Quality Badge for skill READMEs | exploring |
@@ -230,17 +230,17 @@ See [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for how the current code abso
 
 ## Why this exists, in one paragraph
 
-A linter is not impact. **Adopted rules** are impact. We aren't building this because there should be a linter; we're building it because there are 5,000 skills in the wild, 40–60% have a clear quality smell, Anthropic's own issue tracker quantifies the failure modes, and nobody has put together the static-checks half + the trigger-accuracy half before. The longer version, including the honest risks: [docs/WHY.md](./docs/WHY.md).
+A linter is not impact. **Adopted rules** are impact. I am not building this because there should be a linter; I am building it because there are 5,000 skills in the wild, 40 to 60% have a clear quality smell, Anthropic's own issue tracker quantifies the failure modes, and nobody has put together the static-checks half + the trigger-accuracy half before. The longer version, including the honest risks: [docs/WHY.md](./docs/WHY.md).
 
 ---
 
 ## Docs
 
-- 📐 [Architecture](./docs/ARCHITECTURE.md) — diagrams, components, extension points, trade-offs
-- 📜 [Rule spec](./RULES.md) — every rule with citation, example, in-sample frequency
-- 🧩 [Extending](./docs/EXTENDING.md) — add a rule in 12 lines
-- 🎯 [Why doodle](./docs/WHY.md) — the impact argument
-- 🤝 [Contributing](./CONTRIBUTING.md) — ground rules + PR checklist
+- [Architecture](./docs/ARCHITECTURE.md): diagrams, components, extension points, trade-offs
+- [Rule spec](./RULES.md): every rule with citation, example, in-sample frequency
+- [Extending](./docs/EXTENDING.md): add a rule in 12 lines
+- [Why doodle](./docs/WHY.md): the impact argument
+- [Contributing](./CONTRIBUTING.md): ground rules + PR checklist
 
 ---
 
