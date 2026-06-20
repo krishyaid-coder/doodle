@@ -229,8 +229,12 @@ doodle/
 │   ├── EXTENDING.md               # contributor rule guide
 │   └── assets/
 │       ├── logo-mark.svg
-│       ├── logo-banner.svg
-│       └── logo-wordmark.svg
+│       ├── logo-banner-light.svg
+│       ├── logo-banner-dark.svg
+│       ├── logo-wordmark-light.svg
+│       ├── logo-wordmark-dark.svg
+│       ├── mascot.svg
+│       └── mascot-no-bg.svg
 ├── src/doodle/
 │   ├── __init__.py
 │   ├── cli.py                     # entry: `doodle ...`
