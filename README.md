@@ -179,6 +179,30 @@ Full spec, with examples and citations: [RULES.md](./RULES.md).
 
 ---
 
+## Architecture
+
+One Python package, six source files, a clear rule-engine spine. Files in → parsed skill → rule registry → findings out.
+
+```mermaid
+flowchart LR
+    A[SKILL.md files] -->|read| B[Parser]
+    B -->|ParsedSkill| C[Rule registry]
+    Cfg[.doodle.toml] -->|custom rules<br/>+ overrides| C
+    C -->|Finding stream| D[Severity gate]
+    D -->|filtered| E{Formatter}
+    E -->|text| F[stdout]
+    E -->|json| G[CI / dashboard]
+```
+
+- **Parser** — splits frontmatter from body, auto-detects dialect.
+- **Rule registry** — runs built-in + custom rules, applies severity overrides, filters by dialect and per-path globs.
+- **Custom rules** — pattern + frontmatter-required, loaded from `.doodle.toml` at startup, plug in alongside built-ins.
+- **Formatter** — renders findings as colored text or JSON for CI.
+
+Full component table, sequence diagrams, and extension points: [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md).
+
+---
+
 ## Dialects
 
 Two `SKILL.md` dialects exist in the wild. doodle auto-detects.
