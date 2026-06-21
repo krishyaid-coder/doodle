@@ -69,3 +69,4 @@ class Rule:
     dialects: frozenset[Dialect]
     citation: str | None = None
     fixable: bool = False
+    default_enabled: bool = True  # set False for rules that are noisy in practice (opt-in)

@@ -85,12 +85,12 @@ doodle auto-detects dialect by frontmatter shape; users can force with `--dialec
 - In-sample frequency: 2/19 (skill-creator references `~/Downloads/eval_set.json`; aeo uses `~/.aeo-data/citations.json`).
 - Implementation note: skip matches inside ```` ``` ```` fences to allow shell examples.
 
-#### `body/emoji`: info
+#### `body/emoji`: info *(off by default)*
 **Both dialects.** Body contains emoji characters.
 
 - Why: Anthropic style guide discourages emoji in skill bodies; keeps tone consistent with default agent behavior.
-- In-sample frequency: 1/19 (ponytail-review uses in examples).
-- Off by default; enable via `--strict` or config.
+- In-sample frequency: 109 hits across 62-skill corpus — confirmed too noisy to enable by default.
+- **Default: disabled.** Enable via `--strict` or `[severity] "body/emoji" = "info"` in `.doodle.toml`.
 
 ---
 

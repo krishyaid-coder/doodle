@@ -169,7 +169,7 @@ doodle --ignore=body/emoji ./skills
 | `body/too-long` | warning | Body > 500 lines |
 | `body/way-too-long` | error | Body > 1500 lines |
 | `body/absolute-user-path` | warning | `/Users/`, `/home/`, `~/` outside fences |
-| `body/emoji` | info | Emoji in body |
+| `body/emoji` | info *(off by default)* | Emoji in body — opt in via `--strict` or `[severity] "body/emoji" = "info"` in config |
 | `fm/name-mismatch-dir` | warning | `name:` doesn't match parent directory |
 | `fm/missing-allowed-tools` | warning | Extended dialect uses tools but skips scoping |
 | `fm/unknown-field` | info | Anthropic dialect has non-standard fields |
@@ -264,9 +264,10 @@ Need real Python logic? See [docs/EXTENDING.md](./docs/EXTENDING.md#add-a-rule-1
 |---|---|---|
 | **v0** | Static linter — 12 rules, CLI + GitHub Action | shipped |
 | **v0.2** | `.doodle.toml` config, custom pattern + required-fields rules, per-path overrides, severity overrides | shipped |
-| **v1** | `--fix` for safe rules, SARIF output, plugin entry points (`doodle-rules-*` packages) | next |
+| **v1** | `--fix` for auto-fixable rules (blank lines, trailing whitespace), SARIF output for GitHub code scanning, helpful suggestions on parse errors | next |
 | **Phase 2** | `doodle eval` — trigger-accuracy scoring on top of [Promptfoo's `skill-used` assertion](https://www.promptfoo.dev/docs/guides/test-agent-skills/) | designed |
-| **Phase 3** | Hosted scanner + Quality Badge for skill READMEs | exploring |
+| **Phase 3** | VS Code extension — inline lint diagnostics as you author `SKILL.md` (real-time feedback for non-technical authors) | designed |
+| **Phase 4** | Hosted scanner + Quality Badge for skill READMEs | exploring |
 
 See [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for how the current code absorbs Phase 2 without rewrite.
 

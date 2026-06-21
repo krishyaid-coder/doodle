@@ -125,6 +125,16 @@ def main(argv: list[str] | None = None) -> int:
         return 3
 
     disabled = set(args.ignore)
+    # Apply default-disabled rules unless --strict or the user explicitly enabled
+    # them via [severity] in config (any value other than "off" counts as opt-in).
+    if not args.strict:
+        for rule in all_rules():
+            if rule.default_enabled:
+                continue
+            override = config.severity_overrides.get(rule.id)
+            if override is None or override == "off":
+                disabled.add(rule.id)
+
     all_findings = []
     for path in files:
         skill = parse_skill(path)

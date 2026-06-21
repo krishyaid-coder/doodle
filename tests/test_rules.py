@@ -66,3 +66,20 @@ def test_anthropic_dialect_detected_for_good_skill():
 
 def test_severity_ordering():
     assert Severity.ERROR.rank > Severity.WARNING.rank > Severity.INFO.rank
+
+
+def test_emoji_rule_does_not_fire_by_default():
+    """body/emoji is default-disabled (too noisy). It should NOT show up unless opted in."""
+    # run_all itself doesn't know about default_enabled — that's the CLI's job.
+    # But we verify the metadata: the rule must declare default_enabled=False.
+    from doodle.rules import all_rules
+    emoji = next(r for r in all_rules() if r.id == "body/emoji")
+    assert emoji.default_enabled is False
+
+
+def test_emoji_rule_fires_when_check_runs():
+    """If a caller explicitly runs the check, the rule still works (just default-disabled)."""
+    ids = _ids(_findings("has-emoji"))
+    # The rule fires from run_all directly (registry has no notion of default_enabled).
+    # CLI layer is responsible for adding it to disabled. This test guards the rule logic itself.
+    assert "body/emoji" in ids

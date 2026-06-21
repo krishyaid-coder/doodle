@@ -64,6 +64,11 @@ def _split_frontmatter(
                 line=1,
                 column=1,
                 message="SKILL.md must start with a YAML frontmatter block delimited by '---'.",
+                suggestion=(
+                    "Add a frontmatter block at the top with at least 'name' and 'description'. "
+                    "Template: `---\\nname: my-skill\\ndescription: <what> Use when <trigger>.\\n---`. "
+                    "See https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices"
+                ),
             )
         )
         return {}, None, 1, errors
