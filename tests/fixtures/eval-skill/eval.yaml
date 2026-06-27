@@ -1,0 +1,8 @@
+model: claude-sonnet-4-5
+should_fire:
+  - "review my staged changes"
+  - "security pass before I commit"
+  - "look this diff over"
+should_not_fire:
+  - "write me a new function"
+  - "what's the weather"

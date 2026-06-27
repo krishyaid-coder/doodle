@@ -138,9 +138,22 @@ doodle --strict ./skills          # info → warning, warning → error
 
 # silence rules you've decided against
 doodle --ignore=body/emoji ./skills
+
+# auto-fix safe rules (blank lines, emoji) in place
+doodle ./skills --fix
+
+# SARIF output for GitHub code scanning
+doodle ./skills --format=sarif > doodle.sarif
+
+# Phase 2: trigger-accuracy eval (needs `pip install "doodle-lint[eval]"` + `npm i -g promptfoo`)
+doodle eval --generate path/to/SKILL.md     # Claude drafts a starter eval.yaml
+doodle eval path/to/SKILL.md                # run the eval, get a trigger-accuracy score
+doodle eval path/to/SKILL.md --dry-run      # preview the Promptfoo config without running
 ```
 
 **Exit codes:** `0` clean, `1` warnings, `2` errors, `3` tool error.
+
+Full eval workflow + CI integration: **[docs/EVAL.md](./docs/EVAL.md)**.
 
 ---
 
@@ -158,7 +171,7 @@ doodle --ignore=body/emoji ./skills
 
 ## What it catches (v0)
 
-12 rules across 4 categories. Each rule has a citation to Anthropic docs or community evidence, never just "we think this is bad."
+12 rules across 4 categories. Each rule has a citation to Anthropic docs or community evidence, never just "we think this is bad." Rules marked 🔧 are auto-fixable via `doodle --fix`.
 
 | Rule | Severity | What |
 |---|---|---|
@@ -169,11 +182,11 @@ doodle --ignore=body/emoji ./skills
 | `body/too-long` | warning | Body > 500 lines |
 | `body/way-too-long` | error | Body > 1500 lines |
 | `body/absolute-user-path` | warning | `/Users/`, `/home/`, `~/` outside fences |
-| `body/emoji` | info *(off by default)* | Emoji in body — opt in via `--strict` or `[severity] "body/emoji" = "info"` in config |
+| `body/emoji` 🔧 | info *(off by default)* | Emoji in body — opt in via `--strict` or `[severity] "body/emoji" = "info"` in config |
 | `fm/name-mismatch-dir` | warning | `name:` doesn't match parent directory |
 | `fm/missing-allowed-tools` | warning | Extended dialect uses tools but skips scoping |
 | `fm/unknown-field` | info | Anthropic dialect has non-standard fields |
-| `hygiene/desc-blank-lines` | info | Description has embedded blank lines |
+| `hygiene/desc-blank-lines` 🔧 | info | Description has embedded blank lines |
 
 Full spec, with examples and citations: [RULES.md](./RULES.md).
 
@@ -264,9 +277,9 @@ Need real Python logic? See [docs/EXTENDING.md](./docs/EXTENDING.md#add-a-rule-1
 |---|---|---|
 | **v0** | Static linter — 12 rules, CLI + GitHub Action | shipped |
 | **v0.2** | `.doodle.toml` config, custom pattern + required-fields rules, per-path overrides, severity overrides | shipped |
-| **v1** | `--fix` for auto-fixable rules (blank lines, trailing whitespace), SARIF output for GitHub code scanning, helpful suggestions on parse errors | next |
-| **Phase 2** | `doodle eval` — trigger-accuracy scoring on top of [Promptfoo's `skill-used` assertion](https://www.promptfoo.dev/docs/guides/test-agent-skills/) | designed |
-| **Phase 3** | VS Code extension — inline lint diagnostics as you author `SKILL.md` (real-time feedback for non-technical authors) | designed |
+| **v1** (v0.3) | `--fix` for safe auto-fixers (blank lines, emoji), SARIF output for GitHub code scanning, helpful suggestions on parse errors | ✅ shipped |
+| **Phase 2** (v0.4) | `doodle eval` — trigger-accuracy scoring via [Promptfoo's `skill-used` assertion](https://www.promptfoo.dev/docs/guides/test-agent-skills/), plus `--generate` to draft starter eval suites via Claude | ✅ shipped (v0, awaiting real-world validation) |
+| **Phase 3** | VS Code extension — inline lint diagnostics as you author `SKILL.md` (real-time feedback for non-technical authors) | next |
 | **Phase 4** | Hosted scanner + Quality Badge for skill READMEs | exploring |
 
 See [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for how the current code absorbs Phase 2 without rewrite.
@@ -284,6 +297,7 @@ A linter is not impact. **Adopted rules** are impact. I am not building this bec
 - [Architecture](./docs/ARCHITECTURE.md) — diagrams, components, extension points, trade-offs
 - [Rule spec](./RULES.md) — every rule with citation, example, in-sample frequency
 - [Extending](./docs/EXTENDING.md) — add a rule in 12 lines
+- [Eval guide](./docs/EVAL.md) — Phase 2 trigger-accuracy workflow
 - [Why doodle](./docs/WHY.md) — the impact argument
 - [Contributing](./CONTRIBUTING.md) — ground rules + PR checklist
 

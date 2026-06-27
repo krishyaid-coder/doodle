@@ -81,3 +81,68 @@ def format_json(findings: Iterable[Finding]) -> str:
         for f in findings
     ]
     return json.dumps(payload, indent=2) + "\n"
+
+
+_SARIF_LEVEL = {
+    Severity.ERROR: "error",
+    Severity.WARNING: "warning",
+    Severity.INFO: "note",
+}
+
+
+def format_sarif(findings: list[Finding], rules: list, version: str) -> str:
+    """SARIF 2.1.0 — the format GitHub code scanning consumes.
+
+    Spec: https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html
+    """
+    rule_entries = []
+    for rule in rules:
+        entry: dict = {
+            "id": rule.id,
+            "name": rule.id.replace("/", "-"),
+            "shortDescription": {"text": rule.title},
+            "defaultConfiguration": {"level": _SARIF_LEVEL.get(rule.severity, "warning")},
+        }
+        if rule.citation:
+            entry["helpUri"] = rule.citation
+        rule_entries.append(entry)
+
+    results = []
+    for f in findings:
+        results.append(
+            {
+                "ruleId": f.rule_id,
+                "level": _SARIF_LEVEL.get(f.severity, "warning"),
+                "message": {"text": f.message},
+                "locations": [
+                    {
+                        "physicalLocation": {
+                            "artifactLocation": {"uri": str(f.file)},
+                            "region": {
+                                "startLine": max(f.line, 1),
+                                "startColumn": max(f.column, 1),
+                            },
+                        }
+                    }
+                ],
+            }
+        )
+
+    payload = {
+        "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+        "version": "2.1.0",
+        "runs": [
+            {
+                "tool": {
+                    "driver": {
+                        "name": "doodle",
+                        "version": version,
+                        "informationUri": "https://github.com/krishyaid-coder/doodle",
+                        "rules": rule_entries,
+                    }
+                },
+                "results": results,
+            }
+        ],
+    }
+    return json.dumps(payload, indent=2) + "\n"

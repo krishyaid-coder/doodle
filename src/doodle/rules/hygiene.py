@@ -34,6 +34,7 @@ RULES = [
         severity=Severity.INFO,
         category="hygiene",
         dialects=_BOTH,
+        fixable=True,
     ),
 ]
 

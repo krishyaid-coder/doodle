@@ -75,6 +75,8 @@ flowchart TB
 | [`cli.py`](../src/doodle/cli.py) | Argparse, path discovery, severity gating, exit codes. | Subcommands (`doodle eval`, `doodle init`) will land here as `argparse` subparsers. |
 | [`config.py`](../src/doodle/config.py) | Loads `.doodle.toml` (or `pyproject.toml [tool.doodle]`) with discovery up the directory tree. Produces a typed `Config`. Reports validation errors as load-time warnings. | New top-level config keys: extend the `_parse` function. New custom rule kinds: extend `_parse_custom_rule` and `rules/custom.py`. |
 | [`rules/custom.py`](../src/doodle/rules/custom.py) | Materializes `CustomRuleSpec` (from config) into `(Rule, checker)` pairs that plug into the registry alongside built-ins. Supports `pattern` and `frontmatter-required` kinds today. | New kind: add a `_check_<kind>` function and a branch in `build_custom_checks`. |
+| [`fixers.py`](../src/doodle/fixers.py) | Auto-fixers for rules marked `fixable=True`. Each fixer takes a `ParsedSkill` and returns the new file contents (or `None`). CLI applies fixes in sequence with re-parsing between each. | New fixer: add a function, then add it to the `FIXERS` dict keyed by `rule_id`. Mark the matching `Rule` with `fixable=True`. |
+| [`eval/`](../src/doodle/eval/) | Phase 2 trigger-accuracy harness. `schema.py` defines `EvalSuite` + result types; `promptfoo.py` generates Promptfoo configs and parses results; `generate.py` uses the Anthropic SDK to draft starter eval.yamls; `runner.py` orchestrates and formats. Soft-dep on `anthropic` (via `[eval]` extra) + on the `promptfoo` Node binary in PATH. | Changes to Promptfoo's `skill-used` schema land in `promptfoo.py:build_config`. Everything else stays the same. |
 
 ---
 

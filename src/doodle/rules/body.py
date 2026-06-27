@@ -141,6 +141,7 @@ RULES = [
         category="body",
         dialects=_BOTH,
         default_enabled=False,  # 109 hits across 62 sampled skills — too noisy on by default; opt in
+        fixable=True,
     ),
 ]
 
