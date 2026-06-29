@@ -1,0 +1,98 @@
+{
+  "name": "doodle-lint",
+  "displayName": "doodle — Claude SKILL.md linter",
+  "description": "Real-time lint feedback for Claude SKILL.md files. Catches vague descriptions, oversized bodies, hardcoded paths, and silent trigger failures as you author.",
+  "version": "0.1.0",
+  "publisher": "krishyaid-coder",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krishyaid-coder/doodle.git",
+    "directory": "vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/krishyaid-coder/doodle/issues"
+  },
+  "homepage": "https://github.com/krishyaid-coder/doodle",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "claude",
+    "anthropic",
+    "skill",
+    "SKILL.md",
+    "linter",
+    "agent",
+    "llm"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown",
+    "workspaceContains:**/SKILL.md"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "doodle.lintCurrentFile",
+        "title": "doodle: Lint current SKILL.md"
+      },
+      {
+        "command": "doodle.fixCurrentFile",
+        "title": "doodle: Apply auto-fixes to current SKILL.md"
+      },
+      {
+        "command": "doodle.explainRule",
+        "title": "doodle: Explain a rule"
+      }
+    ],
+    "configuration": {
+      "title": "doodle",
+      "properties": {
+        "doodle.command": {
+          "type": "string",
+          "default": "doodle",
+          "description": "Path to the doodle CLI. Use 'doodle' if installed on PATH (`pip install doodle-lint`), or an absolute path inside a venv."
+        },
+        "doodle.strict": {
+          "type": "boolean",
+          "default": false,
+          "description": "Run doodle with --strict (promotes info → warning, warning → error)."
+        },
+        "doodle.runOn": {
+          "type": "string",
+          "enum": ["save", "change", "open"],
+          "default": "save",
+          "description": "When to re-lint: on save, on every change (debounced), or only on open."
+        },
+        "doodle.debounceMs": {
+          "type": "number",
+          "default": 400,
+          "description": "Debounce delay (ms) when runOn = 'change'."
+        },
+        "doodle.configFile": {
+          "type": "string",
+          "default": "",
+          "description": "Optional path to a .doodle.toml file (passed as --config). Empty = auto-discover."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.24.0",
+    "typescript": "^5.3.0"
+  }
+}

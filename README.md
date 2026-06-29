@@ -157,6 +157,19 @@ Full eval workflow + CI integration: **[docs/EVAL.md](./docs/EVAL.md)**.
 
 ---
 
+## In your editor
+
+A [**VS Code extension**](./vscode/README.md) ships in this repo. Real-time diagnostics, hover citations, quick-fixes for fixable rules.
+
+```bash
+# Install the bundled VSIX (until we publish to the marketplace)
+code --install-extension vscode/doodle-lint-0.1.0.vsix
+```
+
+It shells out to the same `doodle` CLI you installed via pip, so upgrading the CLI upgrades the extension's rules automatically.
+
+---
+
 ## In CI (GitHub Action)
 
 ```yaml
@@ -279,8 +292,8 @@ Need real Python logic? See [docs/EXTENDING.md](./docs/EXTENDING.md#add-a-rule-1
 | **v0.2** | `.doodle.toml` config, custom pattern + required-fields rules, per-path overrides, severity overrides | shipped |
 | **v1** (v0.3) | `--fix` for safe auto-fixers (blank lines, emoji), SARIF output for GitHub code scanning, helpful suggestions on parse errors | ✅ shipped |
 | **Phase 2** (v0.4) | `doodle eval` — trigger-accuracy scoring via [Promptfoo's `skill-used` assertion](https://www.promptfoo.dev/docs/guides/test-agent-skills/), plus `--generate` to draft starter eval suites via Claude | ✅ shipped (v0, awaiting real-world validation) |
-| **Phase 3** | VS Code extension — inline lint diagnostics as you author `SKILL.md` (real-time feedback for non-technical authors) | next |
-| **Phase 4** | Hosted scanner + Quality Badge for skill READMEs | exploring |
+| **Phase 3** (vscode 0.1) | VS Code extension — inline diagnostics, quick-fixes for fixable rules, hover citations, commands. Real-time as you author. | ✅ shipped (vsix; marketplace publish pending) |
+| **Phase 4** | Hosted scanner + Quality Badge for skill READMEs | next |
 
 See [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for how the current code absorbs Phase 2 without rewrite.
 
@@ -298,6 +311,7 @@ A linter is not impact. **Adopted rules** are impact. I am not building this bec
 - [Rule spec](./RULES.md) — every rule with citation, example, in-sample frequency
 - [Extending](./docs/EXTENDING.md) — add a rule in 12 lines
 - [Eval guide](./docs/EVAL.md) — Phase 2 trigger-accuracy workflow
+- [VS Code extension](./vscode/README.md) — Phase 3, real-time lint diagnostics
 - [Why doodle](./docs/WHY.md) — the impact argument
 - [Contributing](./CONTRIBUTING.md) — ground rules + PR checklist
 
