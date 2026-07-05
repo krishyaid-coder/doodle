@@ -58,13 +58,86 @@ def _list_rules() -> int:
 def main(argv: list[str] | None = None) -> int:
     """Dispatch to the right subcommand. Defaults to `lint` for back-compat."""
     argv = list(sys.argv[1:] if argv is None else argv)
-    # Subcommand dispatch: `doodle eval ...` and `doodle lint ...` are explicit;
-    # anything else routes to lint so `doodle <path>` keeps working.
+    # Subcommand dispatch: `doodle eval ...`, `doodle init ...`, and
+    # `doodle lint ...` are explicit; anything else routes to lint so
+    # `doodle <path>` keeps working.
     if argv and argv[0] == "eval":
         return _main_eval(argv[1:])
+    if argv and argv[0] == "init":
+        return _main_init(argv[1:])
     if argv and argv[0] == "lint":
         argv = argv[1:]
     return _main_lint(argv)
+
+
+def _main_init(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(
+        prog="doodle init",
+        description=(
+            "Scaffold a compliant SKILL.md (and optionally an eval.yaml). "
+            "The generated file passes `doodle lint` with zero warnings out of the box."
+        ),
+    )
+    parser.add_argument(
+        "name",
+        type=str,
+        help="Skill name in kebab-case (letters, digits, hyphens).",
+    )
+    parser.add_argument(
+        "--dir",
+        type=Path,
+        default=None,
+        help="Directory to scaffold into. Defaults to ./<name>.",
+    )
+    parser.add_argument(
+        "--dialect",
+        choices=["anthropic", "extended"],
+        default="anthropic",
+        help="Frontmatter schema variant to generate (default: anthropic).",
+    )
+    parser.add_argument(
+        "--eval",
+        action="store_true",
+        dest="include_eval",
+        help="Also scaffold a starter eval.yaml for Phase 2 trigger-accuracy testing.",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Overwrite existing SKILL.md or eval.yaml files.",
+    )
+    parser.add_argument(
+        "--author",
+        default="",
+        help="Author for the extended-dialect frontmatter.",
+    )
+    args = parser.parse_args(argv)
+
+    from .init import InitError, InitOptions, scaffold
+
+    directory = args.dir if args.dir is not None else Path(args.name)
+    options = InitOptions(
+        name=args.name,
+        directory=directory,
+        dialect=args.dialect,
+        include_eval=args.include_eval,
+        force=args.force,
+        author=args.author,
+    )
+    try:
+        created = scaffold(options)
+    except InitError as exc:
+        print(f"doodle init: {exc}", file=sys.stderr)
+        return 3
+
+    print("Created:")
+    for path in created:
+        print(f"  {path}")
+    print()
+    print(f"Next: doodle {directory}/SKILL.md")
+    if args.include_eval:
+        print(f"      doodle eval {directory}/SKILL.md")
+    return 0
 
 
 def _main_eval(argv: list[str]) -> int:

@@ -2,9 +2,10 @@
   "name": "doodle-lint",
   "displayName": "doodle — Claude SKILL.md linter",
   "description": "Real-time lint feedback for Claude SKILL.md files. Catches vague descriptions, oversized bodies, hardcoded paths, and silent trigger failures as you author.",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "publisher": "krishyaid-coder",
   "license": "MIT",
+  "icon": "icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/krishyaid-coder/doodle.git",
@@ -49,6 +50,14 @@
       {
         "command": "doodle.explainRule",
         "title": "doodle: Explain a rule"
+      },
+      {
+        "command": "doodle.runEval",
+        "title": "doodle: Run trigger-accuracy eval (Phase 2)"
+      },
+      {
+        "command": "doodle.showOutput",
+        "title": "doodle: Show output channel"
       }
     ],
     "configuration": {
@@ -79,6 +88,11 @@
           "type": "string",
           "default": "",
           "description": "Optional path to a .doodle.toml file (passed as --config). Empty = auto-discover."
+        },
+        "doodle.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show a status bar item with the finding count on the current SKILL.md."
         }
       }
     }

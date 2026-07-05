@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "doodle-lint"
-version = "0.4.0"
+version = "0.5.0"
 description = "A linter for Claude SKILL.md files."
 readme = "README.md"
 license = { text = "MIT" }
@@ -44,6 +44,20 @@ Issues = "https://github.com/krishyaid-coder/doodle/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/doodle"]
+
+[tool.hatch.build.targets.sdist]
+# Exclude the VS Code extension (separately distributed via Open VSX + GitHub Releases)
+# and other non-Python artifacts from the Python source distribution.
+exclude = [
+    "/vscode",
+    "/.venv",
+    "/.github",
+    "/dist",
+    "/build",
+    "/docs/data",
+    "Untitled",
+    "*.vsix",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -3,7 +3,8 @@
  *
  * Shells out to the `doodle` CLI on SKILL.md changes, parses --format=json,
  * surfaces findings as VS Code diagnostics. Offers a quick-fix code action
- * for rules with fixable=true.
+ * for rules with fixable=true. Includes a status bar tally and a bridge
+ * command to `doodle eval` (Phase 2 trigger-accuracy).
  *
  * No bundled language server — the CLI does the real work. Keeps this
  * extension tiny and lets users run any doodle version they want.
@@ -11,6 +12,7 @@
 
 import * as vscode from "vscode";
 import { spawn } from "child_process";
+import * as path from "path";
 
 const DIAGNOSTIC_SOURCE = "doodle";
 const SKILL_FILE_PATTERN = /SKILL\.md$/;
@@ -33,13 +35,18 @@ interface DoodleFinding {
 }
 
 let diagnosticCollection: vscode.DiagnosticCollection;
+let outputChannel: vscode.OutputChannel;
+let statusBar: vscode.StatusBarItem;
 const debounceTimers = new Map<string, NodeJS.Timeout>();
+const findingCounts = new Map<string, { errors: number; warnings: number; infos: number }>();
 
 export function activate(context: vscode.ExtensionContext): void {
   diagnosticCollection = vscode.languages.createDiagnosticCollection(DIAGNOSTIC_SOURCE);
-  context.subscriptions.push(diagnosticCollection);
+  outputChannel = vscode.window.createOutputChannel("doodle");
+  statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+  statusBar.command = "doodle.showOutput";
+  context.subscriptions.push(diagnosticCollection, outputChannel, statusBar);
 
-  // Lint any SKILL.md files already open
   vscode.workspace.textDocuments.forEach(maybeLint);
 
   context.subscriptions.push(
@@ -64,10 +71,15 @@ export function activate(context: vscode.ExtensionContext): void {
     }),
     vscode.workspace.onDidCloseTextDocument((doc) => {
       diagnosticCollection.delete(doc.uri);
+      findingCounts.delete(doc.uri.toString());
+      updateStatusBar();
+    }),
+    vscode.window.onDidChangeActiveTextEditor(() => updateStatusBar()),
+    vscode.workspace.onDidChangeConfiguration((e) => {
+      if (e.affectsConfiguration("doodle.showStatusBar")) {updateStatusBar();}
     }),
   );
 
-  // Commands
   context.subscriptions.push(
     vscode.commands.registerCommand("doodle.lintCurrentFile", async () => {
       const doc = vscode.window.activeTextEditor?.document;
@@ -97,17 +109,38 @@ export function activate(context: vscode.ExtensionContext): void {
       if (!ruleId) {return;}
       try {
         const out = await runDoodleExplain(ruleId);
-        const channel = vscode.window.createOutputChannel("doodle");
-        channel.clear();
-        channel.appendLine(out);
-        channel.show();
+        outputChannel.clear();
+        outputChannel.appendLine(out);
+        outputChannel.show();
       } catch (err) {
         vscode.window.showErrorMessage(`doodle --explain failed: ${err}`);
       }
     }),
+    vscode.commands.registerCommand("doodle.runEval", async () => {
+      const doc = vscode.window.activeTextEditor?.document;
+      if (!doc || !isSkillFile(doc)) {
+        vscode.window.showInformationMessage("doodle: open a SKILL.md file first.");
+        return;
+      }
+      outputChannel.clear();
+      outputChannel.appendLine(`Running: doodle eval ${doc.uri.fsPath}`);
+      outputChannel.appendLine("(requires promptfoo installed + ANTHROPIC_API_KEY set)\n");
+      outputChannel.show();
+      try {
+        const out = await runDoodleEval(doc.uri.fsPath);
+        outputChannel.appendLine(out);
+      } catch (err) {
+        outputChannel.appendLine(`\nerror: ${err}`);
+        outputChannel.appendLine(
+          "\nSee https://github.com/krishyaid-coder/doodle/blob/main/docs/EVAL.md for setup.",
+        );
+      }
+    }),
+    vscode.commands.registerCommand("doodle.showOutput", () => {
+      outputChannel.show();
+    }),
   );
 
-  // Quick-fix code actions
   context.subscriptions.push(
     vscode.languages.registerCodeActionsProvider(
       { language: "markdown", pattern: "**/SKILL.md" },
@@ -119,8 +152,11 @@ export function activate(context: vscode.ExtensionContext): void {
 
 export function deactivate(): void {
   diagnosticCollection?.dispose();
+  outputChannel?.dispose();
+  statusBar?.dispose();
   debounceTimers.forEach((t) => clearTimeout(t));
   debounceTimers.clear();
+  findingCounts.clear();
 }
 
 function isSkillFile(doc: vscode.TextDocument): boolean {
@@ -135,6 +171,8 @@ async function lintDocument(doc: vscode.TextDocument): Promise<void> {
   try {
     const findings = await runDoodleJson(doc.uri.fsPath);
     diagnosticCollection.set(doc.uri, findings.map((f) => toDiagnostic(f, doc)));
+    findingCounts.set(doc.uri.toString(), countFindings(findings));
+    updateStatusBar();
   } catch (err) {
     diagnosticCollection.set(doc.uri, [
       {
@@ -144,7 +182,47 @@ async function lintDocument(doc: vscode.TextDocument): Promise<void> {
         source: DIAGNOSTIC_SOURCE,
       },
     ]);
+    findingCounts.delete(doc.uri.toString());
+    updateStatusBar();
   }
+}
+
+function countFindings(findings: DoodleFinding[]): { errors: number; warnings: number; infos: number } {
+  let errors = 0, warnings = 0, infos = 0;
+  for (const f of findings) {
+    if (f.severity === "error") {errors++;}
+    else if (f.severity === "warning") {warnings++;}
+    else {infos++;}
+  }
+  return { errors, warnings, infos };
+}
+
+function updateStatusBar(): void {
+  const cfg = vscode.workspace.getConfiguration("doodle");
+  const show = cfg.get<boolean>("showStatusBar", true);
+  const doc = vscode.window.activeTextEditor?.document;
+  if (!show || !doc || !isSkillFile(doc)) {
+    statusBar.hide();
+    return;
+  }
+  const counts = findingCounts.get(doc.uri.toString());
+  const fileName = path.basename(path.dirname(doc.uri.fsPath));
+  if (!counts) {
+    statusBar.text = `$(check) doodle`;
+    statusBar.tooltip = `doodle: no run yet for ${fileName}/SKILL.md`;
+  } else if (counts.errors + counts.warnings + counts.infos === 0) {
+    statusBar.text = `$(check) doodle: clean`;
+    statusBar.tooltip = `doodle: no issues on ${fileName}/SKILL.md`;
+  } else {
+    const parts: string[] = [];
+    if (counts.errors) {parts.push(`${counts.errors} error${counts.errors === 1 ? "" : "s"}`);}
+    if (counts.warnings) {parts.push(`${counts.warnings} warning${counts.warnings === 1 ? "" : "s"}`);}
+    if (counts.infos) {parts.push(`${counts.infos} info`);}
+    const icon = counts.errors ? "$(error)" : counts.warnings ? "$(warning)" : "$(info)";
+    statusBar.text = `${icon} doodle: ${parts.join(", ")}`;
+    statusBar.tooltip = `doodle findings on ${fileName}/SKILL.md — click for output`;
+  }
+  statusBar.show();
 }
 
 function toDiagnostic(f: DoodleFinding, doc: vscode.TextDocument): vscode.Diagnostic {
@@ -214,6 +292,24 @@ function runDoodleExplain(ruleId: string): Promise<string> {
   });
 }
 
+function runDoodleEval(filePath: string): Promise<string> {
+  const cfg = vscode.workspace.getConfiguration("doodle");
+  const command = cfg.get<string>("command") || "doodle";
+  return new Promise((resolve, reject) => {
+    const proc = spawn(command, ["eval", filePath]);
+    let stdout = "";
+    let stderr = "";
+    proc.stdout.on("data", (d) => (stdout += d.toString()));
+    proc.stderr.on("data", (d) => (stderr += d.toString()));
+    proc.on("close", (code) => {
+      const combined = stdout + (stderr ? `\n${stderr}` : "");
+      if (code === 3) {reject(new Error(stderr.trim() || `exit ${code}`));}
+      else {resolve(combined);}
+    });
+    proc.on("error", reject);
+  });
+}
+
 function execJson(command: string, args: string[]): Promise<DoodleFinding[]> {
   return new Promise((resolve, reject) => {
     const proc = spawn(command, args);
@@ -222,8 +318,6 @@ function execJson(command: string, args: string[]): Promise<DoodleFinding[]> {
     proc.stdout.on("data", (d) => (stdout += d.toString()));
     proc.stderr.on("data", (d) => (stderr += d.toString()));
     proc.on("close", (code) => {
-      // doodle exit codes: 0 clean, 1 warnings, 2 errors, 3 tool error.
-      // For 0/1/2 we still get valid JSON.
       if (code === 3) {
         reject(new Error(stderr.trim() || "tool error"));
         return;

@@ -42,6 +42,9 @@ doodle --list-rules
 ## Usage
 
 ```bash
+# Scaffold a new skill that passes the linter out of the box
+doodle init my-skill --eval          # creates ./my-skill/{SKILL.md,eval.yaml}
+
 # Lint a single skill
 doodle path/to/SKILL.md
 
@@ -209,9 +212,11 @@ Config is discovered by walking up the directory tree. Force a path with `--conf
 | v0.3            | `--fix`, SARIF output, parse-error suggestions                                               | shipped   |
 | v0.4            | `doodle eval` trigger-accuracy harness, `--generate` starter eval suites                     | shipped   |
 | vscode 0.2      | VS Code extension on Open VSX Registry                                                       | shipped   |
-| v0.5 (next)     | `doodle init` skill scaffold, `doodle badge` quality badges, expanded auto-fix coverage      | planned   |
-| v1.0            | PyPI publication, LSP extraction for Neovim / Zed / JetBrains, community eval suites         | planned   |
-| Hosted (Ph. 4)  | Managed scanner and quality-badge dashboard for marketplace operators                        | exploring |
+| v0.5            | `doodle init` skill scaffold that passes the linter out of the box                           | shipped   |
+| v0.6 (next)     | `doodle badge` quality badges, expanded auto-fix coverage, refreshed 200-skill Quality Report | planned   |
+| v1.0            | PyPI publication, community eval-suite library, pre-commit hook integration                  | planned   |
+| Phase 4         | Managed scanner and quality-badge dashboard for marketplace operators                        | exploring |
+| Phase 5         | LSP extraction for Neovim, Zed, JetBrains via the same rule engine                           | if demand |
 
 ## Validation
 
