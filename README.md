@@ -27,7 +27,7 @@ doodle closes that gap. Twelve static rules, each citing Anthropic's authoring g
 ## Install
 
 ```bash
-pip install git+https://github.com/krishyaid-coder/doodle.git
+pip install doodle-lint
 ```
 
 Requires Python 3.10 or newer. Runtime dependencies: `PyYAML`, and `tomli` on Python 3.10. PyPI publication is pending; once complete, `pip install doodle-lint` will work.
