@@ -49,6 +49,7 @@ class Config:
     severity_overrides: dict[str, str] = field(default_factory=dict)  # rule_id -> "off"/severity
     custom_rules: tuple[CustomRuleSpec, ...] = ()
     path_overrides: tuple[PathOverride, ...] = ()
+    spelling_allowlist: tuple[str, ...] = ()  # extra words to skip in desc/typo
     source: Path | None = None
     load_errors: list[str] = field(default_factory=list)
 
@@ -148,12 +149,22 @@ def _parse(path: Path) -> Config:
         disabled = tuple(str(x) for x in (raw.get("disabled") or []))
         path_overrides.append(PathOverride(glob=glob, disabled=disabled))
 
+    raw_spelling = data.get("spelling", {})
+    spelling_allowlist: tuple[str, ...] = ()
+    if isinstance(raw_spelling, dict):
+        raw_allow = raw_spelling.get("allow", [])
+        if isinstance(raw_allow, list):
+            spelling_allowlist = tuple(str(w) for w in raw_allow)
+        elif raw_allow:
+            errors.append("spelling.allow must be a list of strings")
+
     return Config(
         dialect=dialect,
         fail_on=fail_on,
         severity_overrides=severity_overrides,
         custom_rules=tuple(custom_rules),
         path_overrides=tuple(path_overrides),
+        spelling_allowlist=spelling_allowlist,
         source=path,
         load_errors=errors,
     )

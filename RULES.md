@@ -54,6 +54,19 @@ doodle auto-detects dialect by frontmatter shape; users can force with `--dialec
 - Fail: `description: "A senior data engineer that designs ETL pipelines."`
 - Pass: `description: "Designs ETL pipelines. Use when the user says 'design a pipeline', 'data architecture', or mentions Airflow/dbt/Spark."`
 
+#### `desc/typo`: info (default disabled)
+**Both dialects.** Description contains a likely misspelling that isn't in the built-in AI/dev-tooling allowlist.
+
+- Why: descriptions are the primary trigger surface. A misspelled description means Claude's automatic skill-picker matches the misspelled token, but users type the correctly-spelled version, so the skill silently fails to fire.
+- Backed by [pyspellchecker](https://pyspellchecker.readthedocs.io/) (~160k-word English dictionary).
+- Ships with a curated allowlist covering Anthropic products, common AI vocabulary, dev tooling, package managers, cloud providers, and shell commands. See `src/doodle/rules/spelling.py::BUILTIN_ALLOWLIST` for the full list.
+- Users add their own vocabulary via `.doodle.toml`:
+  ```toml
+  [spelling]
+  allow = ["frobnicate", "widgetize", "AcmeCorp"]
+  ```
+- Default disabled because domain vocabulary varies. Enable via `--strict` or `[severity] "desc/typo" = "warning"` in config.
+
 #### `desc/vague-trigger`: warning
 **Both dialects.** Description's trigger phrases overlap Claude's default behavior. Curated blocklist v0: `"reviewing code"`, `"reviewing pull requests"`, `"writing tests"`, `"writing code"`, `"building a feature"`, `"debugging"`, `"answering questions"`, `"general programming"`.
 

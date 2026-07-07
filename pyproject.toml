@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "doodle-lint"
-version = "0.5.0"
+version = "0.6.0"
 description = "A linter for Claude SKILL.md files."
 readme = "README.md"
 license = { text = "MIT" }
@@ -24,6 +24,7 @@ classifiers = [
 dependencies = [
     "PyYAML>=6.0",
     "tomli>=2.0; python_version<'3.11'",
+    "pyspellchecker>=0.7",
 ]
 
 [project.optional-dependencies]
@@ -54,6 +55,7 @@ exclude = [
     "/.github",
     "/dist",
     "/build",
+    "/tmp",
     "/docs/data",
     "Untitled",
     "*.vsix",

@@ -266,6 +266,10 @@ def _main_lint(argv: list[str]) -> int:
     for err in config.load_errors:
         print(f"doodle: config: {err}", file=sys.stderr)
 
+    # Push the user allowlist into the spelling rule module
+    from .rules.spelling import set_user_allowlist
+    set_user_allowlist(config.spelling_allowlist)
+
     # Build custom rule pairs once
     custom_pairs = build_custom_checks(config.custom_rules)
 

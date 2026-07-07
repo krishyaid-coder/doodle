@@ -6,10 +6,10 @@ from fnmatch import fnmatch
 from pathlib import PurePath
 
 from ..models import Finding, ParsedSkill, Rule, Severity
-from . import body, custom, description, frontmatter, hygiene
+from . import body, custom, description, frontmatter, hygiene, spelling
 
 
-_MODULES = [description, body, frontmatter, hygiene]
+_MODULES = [description, body, frontmatter, hygiene, spelling]
 
 
 def all_rules() -> list[Rule]:

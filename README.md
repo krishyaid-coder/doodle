@@ -125,6 +125,7 @@ Each rule cites either Anthropic's authoring documentation or a documented commu
 | `desc/too-short`            | warning                  | no      | Description shorter than 60 characters or missing      |
 | `desc/no-trigger-phrase`    | warning                  | no      | No explicit "Use when" or "Trigger with" phrasing      |
 | `desc/vague-trigger`        | warning                  | no      | Trigger overlaps Claude's default behavior             |
+| `desc/typo`                 | info (off by default)    | no      | Description contains a likely misspelling              |
 | `body/too-long`             | warning                  | no      | Body longer than 500 lines                             |
 | `body/way-too-long`         | error                    | no      | Body longer than 1500 lines                            |
 | `body/absolute-user-path`   | warning                  | no      | Contains `/Users/`, `/home/`, or `~/` outside fences   |
@@ -213,7 +214,8 @@ Config is discovered by walking up the directory tree. Force a path with `--conf
 | v0.4            | `doodle eval` trigger-accuracy harness, `--generate` starter eval suites                     | shipped   |
 | vscode 0.2      | VS Code extension on Open VSX Registry                                                       | shipped   |
 | v0.5            | `doodle init` skill scaffold that passes the linter out of the box                           | shipped   |
-| v0.6 (next)     | `doodle badge` quality badges, expanded auto-fix coverage, refreshed 200-skill Quality Report | planned   |
+| v0.6            | `desc/typo` spelling check backed by pyspellchecker, with a curated allowlist for AI vocabulary | shipped   |
+| v0.7 (next)     | `doodle badge` quality badges, expanded auto-fix coverage, refreshed 200-skill Quality Report | planned   |
 | v1.0            | PyPI publication, community eval-suite library, pre-commit hook integration                  | planned   |
 | Phase 4         | Managed scanner and quality-badge dashboard for marketplace operators                        | exploring |
 | Phase 5         | LSP extraction for Neovim, Zed, JetBrains via the same rule engine                           | if demand |
