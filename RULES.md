@@ -132,6 +132,18 @@ doodle auto-detects dialect by frontmatter shape; users can force with `--dialec
 
 ### Category: hygiene
 
+#### `hygiene/trailing-whitespace`: info (fixable)
+**Both dialects.** One or more lines end with space or tab characters before the newline.
+
+- Why: Trailing whitespace inflates diffs, breaks some markdown parsers, and signals sloppy tooling. Purely cosmetic but a common contributor complaint.
+- Fixable: `doodle --fix` strips trailing whitespace from every line and preserves the file's original trailing-newline state.
+
+#### `hygiene/final-newline`: info (fixable)
+**Both dialects.** The file does not end with a newline character.
+
+- Why: POSIX tools expect files to end with `\n`. Missing final newlines produce noisy `git diff` output when the last line is edited (`\ No newline at end of file`).
+- Fixable: `doodle --fix` appends a single trailing newline.
+
 #### `hygiene/desc-blank-lines`: info
 **Both dialects.** Description (when written as YAML folded/block scalar) contains literal blank lines.
 

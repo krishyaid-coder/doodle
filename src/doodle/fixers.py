@@ -59,9 +59,31 @@ def fix_emoji(skill: ParsedSkill) -> str | None:
     return f"{fm_raw}\n{new_body}\n"
 
 
+def fix_trailing_whitespace(skill: ParsedSkill) -> str | None:
+    """Strip trailing whitespace from every line, preserving structure."""
+    stripped_lines = [line.rstrip(" \t") for line in skill.raw_lines]
+    if stripped_lines == skill.raw_lines:
+        return None
+    # Preserve the original trailing-newline state; the final-newline fixer
+    # handles that separately.
+    trailer = "\n" if skill.raw_text.endswith("\n") else ""
+    return "\n".join(stripped_lines) + trailer
+
+
+def fix_final_newline(skill: ParsedSkill) -> str | None:
+    """Ensure the file ends with a single trailing newline."""
+    if not skill.raw_text:
+        return None
+    if skill.raw_text.endswith("\n"):
+        return None
+    return skill.raw_text + "\n"
+
+
 FIXERS: dict[str, Fixer] = {
     "hygiene/desc-blank-lines": fix_desc_blank_lines,
     "body/emoji": fix_emoji,
+    "hygiene/trailing-whitespace": fix_trailing_whitespace,
+    "hygiene/final-newline": fix_final_newline,
 }
 
 

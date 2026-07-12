@@ -168,6 +168,8 @@ doodle badge SKILL.md --link=https://github.com/you/your-skills   # override the
 | `fm/missing-allowed-tools`  | warning                  | no      | Extended dialect uses tools but omits scoping          |
 | `fm/unknown-field`          | info                     | no      | Anthropic dialect has non-standard field               |
 | `hygiene/desc-blank-lines`  | info                     | yes     | Description contains embedded blank lines              |
+| `hygiene/trailing-whitespace` | info                   | yes     | Line has trailing whitespace                           |
+| `hygiene/final-newline`     | info                     | yes     | File does not end with a newline                       |
 
 ## Architecture
 
@@ -250,7 +252,8 @@ Config is discovered by walking up the directory tree. Force a path with `--conf
 | v0.5            | `doodle init` skill scaffold that passes the linter out of the box                           | shipped   |
 | v0.6            | `desc/typo` spelling check backed by pyspellchecker, with a curated allowlist for AI vocabulary | shipped   |
 | v0.7            | `doodle badge` quality badges (shields.io-backed, A+/A/B/C/D/F rubric)                       | shipped   |
-| v0.8 (next)     | Expanded auto-fix coverage, refreshed 200-skill Quality Report                               | planned   |
+| v0.8            | Two new hygiene rules with auto-fix (trailing-whitespace, final-newline)                     | shipped   |
+| v0.9 (next)     | Refreshed 200-skill Quality Report, community eval-suite library                             | planned   |
 | v1.0            | PyPI publication, community eval-suite library, pre-commit hook integration                  | planned   |
 | Phase 4         | Managed scanner and quality-badge dashboard for marketplace operators                        | exploring |
 | Phase 5         | LSP extraction for Neovim, Zed, JetBrains via the same rule engine                           | if demand |
