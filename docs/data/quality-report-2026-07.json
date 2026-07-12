@@ -1,0 +1,3400 @@
+{
+  "sample_size": 200,
+  "repos": [
+    {
+      "name": "DietrichGebert/ponytail",
+      "sampled": 6
+    },
+    {
+      "name": "anthropics/skills",
+      "sampled": 18
+    },
+    {
+      "name": "obra/superpowers",
+      "sampled": 14
+    },
+    {
+      "name": "vercel-labs/skills",
+      "sampled": 1
+    },
+    {
+      "name": "alirezarezvani/claude-skills",
+      "sampled": 61
+    },
+    {
+      "name": "jeremylongshore/claude-code-plugins-plus-skills",
+      "sampled": 100
+    }
+  ],
+  "findings": [
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ponytail/skills/ponytail/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 825 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "DietrichGebert/ponytail"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ponytail/skills/ponytail/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "DietrichGebert/ponytail"
+    },
+    {
+      "rule_id": "fm/missing-allowed-tools",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ponytail/skills/ponytail/SKILL.md",
+      "line": 1,
+      "column": 1,
+      "message": "Body references tools (Bash/Write/Edit/subprocess) but frontmatter omits 'allowed-tools'. Explicit scoping limits blast radius.",
+      "suggestion": "Add 'allowed-tools: [Read, Write, Bash]' (or the minimal set this skill actually needs).",
+      "_repo": "DietrichGebert/ponytail"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ponytail/skills/ponytail-audit/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 400 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "DietrichGebert/ponytail"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ponytail/skills/ponytail-debt/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 386 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "DietrichGebert/ponytail"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ponytail/skills/ponytail-gain/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 302 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "DietrichGebert/ponytail"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ponytail/skills/ponytail-help/SKILL.md",
+      "line": 53,
+      "column": 19,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "DietrichGebert/ponytail"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ponytail/skills/ponytail-review/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 456 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "DietrichGebert/ponytail"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/algorithmic-art/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 324 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/algorithmic-art/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "hygiene/final-newline",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/algorithmic-art/SKILL.md",
+      "line": 405,
+      "column": 1,
+      "message": "File does not end with a newline.",
+      "suggestion": "Add a trailing newline. Run `doodle --fix` to auto-add.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/brand-guidelines/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/canvas-design/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 289 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/canvas-design/SKILL.md",
+      "line": 106,
+      "column": 1151,
+      "message": "Line has 1 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/canvas-design/SKILL.md",
+      "line": 112,
+      "column": 192,
+      "message": "Line has 1 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "hygiene/final-newline",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/canvas-design/SKILL.md",
+      "line": 130,
+      "column": 1,
+      "message": "File does not end with a newline.",
+      "suggestion": "Add a trailing newline. Run `doodle --fix` to auto-add.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/claude-api/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 1068 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/claude-api/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "body/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/claude-api/SKILL.md",
+      "line": 9,
+      "column": 1,
+      "message": "Body is 570 lines (soft cap 500). Long bodies bloat every agent invocation; prefer progressive disclosure.",
+      "suggestion": "Move detail into separate files referenced from the body, or split into multiple skills.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/claude-api/SKILL.md",
+      "line": 228,
+      "column": 195,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/doc-coauthoring/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 428 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/docx/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 785 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/vague-trigger",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/docx/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description uses trigger phrase(s) that overlap Claude's default behavior: 'general coding', 'coding tasks'. The skill may never fire.",
+      "suggestion": "Replace with concrete, domain-specific phrases the user is likely to type.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "body/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/docx/SKILL.md",
+      "line": 6,
+      "column": 1,
+      "message": "Body is 585 lines (soft cap 500). Long bodies bloat every agent invocation; prefer progressive disclosure.",
+      "suggestion": "Move detail into separate files referenced from the body, or split into multiple skills.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/frontend-design/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/internal-comms/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 329 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/internal-comms/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/mcp-builder/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 277 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/pdf/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 437 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/pdf/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/pptx/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 688 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/pptx/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/skill-creator/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 319 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/skill-creator/SKILL.md",
+      "line": 371,
+      "column": 27,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/theme-factory/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 262 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/theme-factory/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/web-artifacts-builder/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 288 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/web-artifacts-builder/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "hygiene/final-newline",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/web-artifacts-builder/SKILL.md",
+      "line": 74,
+      "column": 1,
+      "message": "File does not end with a newline.",
+      "suggestion": "Add a trailing newline. Run `doodle --fix` to auto-add.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/webapp-testing/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/webapp-testing/SKILL.md",
+      "line": 85,
+      "column": 279,
+      "message": "Line has 1 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "hygiene/final-newline",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/webapp-testing/SKILL.md",
+      "line": 96,
+      "column": 1,
+      "message": "File does not end with a newline.",
+      "suggestion": "Add a trailing newline. Run `doodle --fix` to auto-add.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/xlsx/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 941 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/vague-trigger",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/xlsx/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description uses trigger phrase(s) that overlap Claude's default behavior: 'any task'. The skill may never fire.",
+      "suggestion": "Replace with concrete, domain-specific phrases the user is likely to type.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/xlsx/SKILL.md",
+      "line": 141,
+      "column": 34,
+      "message": "Line has 1 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/xlsx/SKILL.md",
+      "line": 238,
+      "column": 58,
+      "message": "Line has 1 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "hygiene/final-newline",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/anthropic/skills/xlsx/SKILL.md",
+      "line": 292,
+      "column": 1,
+      "message": "File does not end with a newline.",
+      "suggestion": "Add a trailing newline. Run `doodle --fix` to auto-add.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/template/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "fm/name-mismatch-dir",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/anthropic/template/SKILL.md",
+      "line": 2,
+      "column": 1,
+      "message": "Frontmatter name 'template-skill' doesn't match parent directory 'template'. Claude resolves skills by directory; mismatch causes confusion.",
+      "suggestion": "Rename the directory to 'template-skill' or change the name field to 'template'.",
+      "_repo": "anthropics/skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/obra/skills/brainstorming/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "obra/superpowers"
+    },
+    {
+      "rule_id": "body/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/obra/skills/writing-skills/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Body is 685 lines (soft cap 500). Long bodies bloat every agent invocation; prefer progressive disclosure.",
+      "suggestion": "Move detail into separate files referenced from the body, or split into multiple skills.",
+      "_repo": "obra/superpowers"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/obra/skills/writing-skills/SKILL.md",
+      "line": 12,
+      "column": 60,
+      "message": "Line has 1 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "obra/superpowers"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/vercel/skills/find-skills/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 303 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "vercel-labs/skills"
+    },
+    {
+      "rule_id": "parse/missing-frontmatter",
+      "severity": "error",
+      "file": "/private/tmp/qr-corpus/ali/agents/personas/README.md",
+      "line": 1,
+      "column": 1,
+      "message": "SKILL.md must start with a YAML frontmatter block delimited by '---'.",
+      "suggestion": "Add a frontmatter block at the top with at least 'name' and 'description'. Template: `---\\nname: my-skill\\ndescription: <what> Use when <trigger>.\\n---`. See https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-short",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/agents/personas/README.md",
+      "line": 1,
+      "column": 1,
+      "message": "Frontmatter is missing the 'description' field.",
+      "suggestion": "Add a 1-2 sentence description with concrete trigger phrases.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/agents/personas/TEMPLATE.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/name-mismatch-dir",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/agents/personas/TEMPLATE.md",
+      "line": 2,
+      "column": 1,
+      "message": "Frontmatter name 'Agent Name' doesn't match parent directory 'personas'. Claude resolves skills by directory; mismatch causes confusion.",
+      "suggestion": "Rename the directory to 'Agent Name' or change the name field to 'personas'.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/agents/personas/TEMPLATE.md",
+      "line": 4,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'color' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'color', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/agents/personas/TEMPLATE.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'emoji' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'emoji', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/agents/personas/TEMPLATE.md",
+      "line": 6,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'vibe' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'vibe', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/agents/personas/TEMPLATE.md",
+      "line": 7,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'tools' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'tools', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering-team/a11y-audit/skills/a11y-audit/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 338 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/ab-test-setup/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 341 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/ab-test-setup/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/ad-creative/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 435 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/ad-creative/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering-team/skills/adversarial-reviewer/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 355 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/missing-allowed-tools",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering-team/skills/adversarial-reviewer/SKILL.md",
+      "line": 1,
+      "column": 1,
+      "message": "Body references tools (Bash/Write/Edit/subprocess) but frontmatter omits 'allowed-tools'. Explicit scoping limits blast radius.",
+      "suggestion": "Add 'allowed-tools: [Read, Write, Bash]' (or the minimal set this skill actually needs).",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/aeo/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 736 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/aeo/SKILL.md",
+      "line": 73,
+      "column": 12,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/aeo/SKILL.md",
+      "line": 196,
+      "column": 4,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/aeo/SKILL.md",
+      "line": 197,
+      "column": 4,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/aeo/SKILL.md",
+      "line": 198,
+      "column": 4,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/agent-designer/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 521 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/agent-protocol/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 279 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/agent-protocol/SKILL.md",
+      "line": 189,
+      "column": 101,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/agent-protocol/SKILL.md",
+      "line": 189,
+      "column": 211,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/agent-protocol/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/agent-protocol/SKILL.md",
+      "line": 326,
+      "column": 46,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/agent-workflow-designer/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 368 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/agent-workflow-designer/SKILL.md",
+      "line": 8,
+      "column": 19,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/agent-workflow-designer/SKILL.md",
+      "line": 9,
+      "column": 26,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/agenthub/skills/agenthub/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 420 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/vague-trigger",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/agenthub/skills/agenthub/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description uses trigger phrase(s) that overlap Claude's default behavior: 'any task'. The skill may never fire.",
+      "suggestion": "Replace with concrete, domain-specific phrases the user is likely to type.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/agenthub/skills/agenthub/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/product-team/agile-product-owner/skills/agile-product-owner/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 310 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/product-team/agile-product-owner/skills/agile-product-owner/SKILL.md",
+      "line": 4,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'not_for' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'not_for', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/product-team/agile-product-owner/skills/agile-product-owner/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'triggers' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'triggers', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/compliance-os/skills/ai-act-readiness/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 251 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/compliance-os/skills/ai-act-readiness/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering-team/skills/ai-security/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 254 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/compliance-os/skills/aims-audit/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/analytics-tracking/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 666 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/analytics-tracking/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/analytics-tracking/SKILL.md",
+      "line": 241,
+      "column": 1,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/productivity/andreessen/skills/andreessen/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 983 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/productivity/andreessen/skills/andreessen/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/api-design-reviewer/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 345 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/api-design-reviewer/SKILL.md",
+      "line": 8,
+      "column": 19,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/api-design-reviewer/SKILL.md",
+      "line": 9,
+      "column": 41,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/api-design-reviewer/SKILL.md",
+      "line": 10,
+      "column": 35,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/api-design-reviewer/SKILL.md",
+      "line": 94,
+      "column": 41,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/api-design-reviewer/SKILL.md",
+      "line": 102,
+      "column": 42,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/api-design-reviewer/SKILL.md",
+      "line": 110,
+      "column": 53,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/api-design-reviewer/SKILL.md",
+      "line": 117,
+      "column": 30,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/api-design-reviewer/SKILL.md",
+      "line": 251,
+      "column": 20,
+      "message": "Line has 1 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/final-newline",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/api-design-reviewer/SKILL.md",
+      "line": 433,
+      "column": 1,
+      "message": "File does not end with a newline.",
+      "suggestion": "Add a trailing newline. Run `doodle --fix` to auto-add.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/app-store-optimization/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 532 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/app-store-optimization/SKILL.md",
+      "line": 4,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'triggers' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'triggers', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/product-team/apple-hig-expert/skills/apple-hig-expert/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 442 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/product-team/apple-hig-expert/skills/apple-hig-expert/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/project-management/skills/atlassian-admin/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 460 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/project-management/skills/atlassian-templates/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 312 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/autoresearch-agent/skills/autoresearch-agent/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 542 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/autoresearch-agent/skills/autoresearch-agent/SKILL.md",
+      "line": 67,
+      "column": 31,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/autoresearch-agent/skills/autoresearch-agent/SKILL.md",
+      "line": 82,
+      "column": 13,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/autoresearch-agent/skills/autoresearch-agent/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering-team/skills/aws-solution-architect/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 302 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering-team/skills/azure-cloud-architect/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 281 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/behuman/skills/behuman/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 384 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/agenthub/skills/board/SKILL.md",
+      "line": 4,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'command' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'command', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/board-deck-builder/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 290 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/board-deck-builder/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/board-meeting/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 403 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/board-meeting/SKILL.md",
+      "line": 29,
+      "column": 10,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/board-meeting/SKILL.md",
+      "line": 30,
+      "column": 42,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/board-meeting/SKILL.md",
+      "line": 118,
+      "column": 41,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/board-meeting/SKILL.md",
+      "line": 119,
+      "column": 50,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/board-meeting/SKILL.md",
+      "line": 119,
+      "column": 126,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/board-meeting/SKILL.md",
+      "line": 139,
+      "column": 150,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/board-meeting/SKILL.md",
+      "line": 150,
+      "column": 40,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/board-meeting/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/executive-mentor/skills/board-prep/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 392 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/boardroom/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 306 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/boardroom/SKILL.md",
+      "line": 56,
+      "column": 11,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/boardroom/SKILL.md",
+      "line": 112,
+      "column": 21,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/brand-guidelines/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 467 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/brand-guidelines/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/brief/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 314 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/brief/SKILL.md",
+      "line": 23,
+      "column": 4,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/brief/SKILL.md",
+      "line": 27,
+      "column": 31,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/brief/SKILL.md",
+      "line": 97,
+      "column": 13,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/business-growth/skills/business-growth-skills/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 474 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/finance/business-investment-advisor/skills/business-investment-advisor/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 377 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/business-operations/skills/business-operations-skills/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 643 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/missing-allowed-tools",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/business-operations/skills/business-operations-skills/SKILL.md",
+      "line": 1,
+      "column": 1,
+      "message": "Body references tools (Bash/Write/Edit/subprocess) but frontmatter omits 'allowed-tools'. Explicit scoping limits blast radius.",
+      "suggestion": "Add 'allowed-tools: [Read, Write, Bash]' (or the minimal set this skill actually needs).",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/c-level-agents/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 400 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/c-level-agents/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/c-level-skills/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 349 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/c-level-skills/SKILL.md",
+      "line": 22,
+      "column": 117,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/c-level-skills/SKILL.md",
+      "line": 25,
+      "column": 67,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/c-level-skills/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/caio-review/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 318 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/campaign-analytics/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 308 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/marketing-skill/skills/campaign-analytics/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/ra-qm-team/skills/capa-officer/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 333 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/ra-qm-team/skills/capa-officer/SKILL.md",
+      "line": 4,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'triggers' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'triggers', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/business-operations/skills/capacity-planner/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 710 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/missing-allowed-tools",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/business-operations/skills/capacity-planner/SKILL.md",
+      "line": 1,
+      "column": 1,
+      "message": "Body references tools (Bash/Write/Edit/subprocess) but frontmatter omits 'allowed-tools'. Explicit scoping limits blast radius.",
+      "suggestion": "Add 'allowed-tools: [Read, Write, Bash]' (or the minimal set this skill actually needs).",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/productivity/capture/skills/capture/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 939 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/productivity/capture/skills/capture/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/caveman/skills/caveman/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 263 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/caveman/skills/caveman/SKILL.md",
+      "line": 9,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/cco-review/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 301 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/c-level-agents/skills/cdo-review/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 324 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/ceo-advisor/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 402 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/ceo-advisor/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/cfo-advisor/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 415 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/cfo-advisor/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/executive-mentor/skills/challenge/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 397 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/change-management/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 492 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/change-management/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/commands/changelog.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/name-mismatch-dir",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/commands/changelog.md",
+      "line": 2,
+      "column": 1,
+      "message": "Frontmatter name 'changelog' doesn't match parent directory 'commands'. Claude resolves skills by directory; mismatch causes confusion.",
+      "suggestion": "Rename the directory to 'changelog' or change the name field to 'commands'.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/changelog-generator/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 503 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/changelog-generator/SKILL.md",
+      "line": 8,
+      "column": 19,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "hygiene/trailing-whitespace",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/changelog-generator/SKILL.md",
+      "line": 9,
+      "column": 26,
+      "message": "Line has 2 character(s) of trailing whitespace.",
+      "suggestion": "Strip trailing whitespace. Run `doodle --fix` to auto-clean.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/commercial/skills/channel-economics/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 787 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/engineering/skills/chaos-engineering/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 664 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/commands/chaos-experiment.md",
+      "line": 2,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/chief-ai-officer-advisor/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 619 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/chief-ai-officer-advisor/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/chief-customer-officer-advisor/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 561 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "fm/unknown-field",
+      "severity": "info",
+      "file": "/private/tmp/qr-corpus/ali/c-level-advisor/skills/chief-customer-officer-advisor/SKILL.md",
+      "line": 5,
+      "column": 1,
+      "message": "Frontmatter contains unknown field 'metadata' for anthropic dialect. Known fields: ['description', 'license', 'name'].",
+      "suggestion": "Remove 'metadata', or switch to the extended dialect if you need it.",
+      "_repo": "alirezarezvani/claude-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/agency-os/skills/agency-os/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 630 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/audit/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 335 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/audit/SKILL.md",
+      "line": 204,
+      "column": 89,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/background/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 405 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/bridge/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 565 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/bridge/SKILL.md",
+      "line": 100,
+      "column": 26,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/cache/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 316 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/cache/SKILL.md",
+      "line": 34,
+      "column": 43,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/cache/SKILL.md",
+      "line": 82,
+      "column": 7,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/cache/SKILL.md",
+      "line": 119,
+      "column": 39,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/cache/SKILL.md",
+      "line": 151,
+      "column": 64,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/deploy/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 298 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/design/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 571 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/design/SKILL.md",
+      "line": 140,
+      "column": 39,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/dispatch/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 336 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/flush/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 431 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/handoff/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 379 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/hyperflow/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 389 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/vague-trigger",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/hyperflow/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description uses trigger phrase(s) that overlap Claude's default behavior: 'any task'. The skill may never fire.",
+      "suggestion": "Replace with concrete, domain-specific phrases the user is likely to type.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/hyperflow/SKILL.md",
+      "line": 66,
+      "column": 42,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/issue/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 482 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/plan/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 612 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/vague-trigger",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/plan/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description uses trigger phrase(s) that overlap Claude's default behavior: 'any code'. The skill may never fire.",
+      "suggestion": "Replace with concrete, domain-specific phrases the user is likely to type.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/pr/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 433 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/scaffold/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 332 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/scaffold/SKILL.md",
+      "line": 79,
+      "column": 20,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/scaffold/SKILL.md",
+      "line": 126,
+      "column": 33,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/scaffold/SKILL.md",
+      "line": 135,
+      "column": 42,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/scaffold/SKILL.md",
+      "line": 159,
+      "column": 4,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/status/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 319 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/sticky/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 419 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/trace/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 360 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/workflow/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 469 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/workflow/SKILL.md",
+      "line": 24,
+      "column": 122,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "body/absolute-user-path",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/workflow/SKILL.md",
+      "line": 176,
+      "column": 217,
+      "message": "Body contains an absolute user path ('~/'). Skills are installed on other users' machines \u2014 hardcoded paths break.",
+      "suggestion": "Use relative paths, environment variables, or document the path as user-provided.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/shipwright/skills/shipwright-pipeline/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 359 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/buzz-devrel/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 372 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/buzz-hn/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 389 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/buzz-outreach/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 314 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/ink-brief/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 346 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/ink-cluster/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 359 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/ink-distribute/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 357 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/pitch-copy/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 282 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/pitch-launch/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 288 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/pitch-message/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 298 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/pitch-position/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 402 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/pitch-recon/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 337 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/deal-outreach/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 335 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/deal-proposal/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 374 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/deal-qualify/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 285 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/keep-churn/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 333 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/keep-qbr/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 298 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/keep-segment/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 330 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/surge-activation/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 383 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/surge-experiment/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 294 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/surge-plg/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 353 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/surge-recon/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 347 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/surge-retention/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 333 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/apex/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/vague-trigger",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/apex/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description uses trigger phrase(s) that overlap Claude's default behavior: 'any task'. The skill may never fire.",
+      "suggestion": "Replace with concrete, domain-specific phrases the user is likely to type.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/apex-recon/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 252 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/atlas/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/atlas-map/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 277 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/atlas-onboard/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 283 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/atlas-present/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 253 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz-community/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 302 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz-launch/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 261 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz-pitch/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 257 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz-recon/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 264 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz-social/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 256 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/cortex/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest-compete/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 276 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest-narrative/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 290 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest-okr/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 279 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest-recon/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 306 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest-roadmap/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 270 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/deal/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/deal-close/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 258 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/deal-pipeline/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 254 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/deal-pricing/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 263 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/deal-recon/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 285 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft-flow/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 302 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft-ia/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 309 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft-recon/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 308 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft-review/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 285 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft-wireframe/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 449 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo-feedback/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 367 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo-interview/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 329 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo-jobs/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 339 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo-recon/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 315 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/too-long",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo-segment/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description is 283 characters (max 250). Long descriptions dilute trigger matching and waste context.",
+      "suggestion": "Trim to the essential 'what' + concrete trigger phrases. Move detail into the body.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    },
+    {
+      "rule_id": "desc/no-trigger-phrase",
+      "severity": "warning",
+      "file": "/private/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/flux/SKILL.md",
+      "line": 3,
+      "column": 1,
+      "message": "Description has no explicit trigger phrase ('Use when\u2026', 'Trigger with\u2026', 'When the user\u2026').",
+      "suggestion": "Add concrete trigger phrasing so Claude knows when to invoke this skill.",
+      "_repo": "jeremylongshore/claude-code-plugins-plus-skills"
+    }
+  ],
+  "per_file_rule_counts": {
+    "/tmp/qr-corpus/ponytail/skills/ponytail/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/no-trigger-phrase": 1,
+      "fm/missing-allowed-tools": 1
+    },
+    "/tmp/qr-corpus/ponytail/skills/ponytail-audit/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ponytail/skills/ponytail-debt/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ponytail/skills/ponytail-gain/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ponytail/skills/ponytail-help/SKILL.md": {
+      "body/absolute-user-path": 1
+    },
+    "/tmp/qr-corpus/ponytail/skills/ponytail-review/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/algorithmic-art/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/no-trigger-phrase": 1,
+      "hygiene/final-newline": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/brand-guidelines/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/canvas-design/SKILL.md": {
+      "desc/too-long": 1,
+      "hygiene/trailing-whitespace": 2,
+      "hygiene/final-newline": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/claude-api/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/no-trigger-phrase": 1,
+      "body/too-long": 1,
+      "body/absolute-user-path": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/doc-coauthoring/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/docx/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/vague-trigger": 1,
+      "body/too-long": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/frontend-design/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/internal-comms/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/mcp-builder/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/pdf/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/pptx/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/skill-creator/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/theme-factory/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/web-artifacts-builder/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/no-trigger-phrase": 1,
+      "hygiene/final-newline": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/webapp-testing/SKILL.md": {
+      "desc/no-trigger-phrase": 1,
+      "hygiene/trailing-whitespace": 1,
+      "hygiene/final-newline": 1
+    },
+    "/tmp/qr-corpus/anthropic/skills/xlsx/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/vague-trigger": 1,
+      "hygiene/trailing-whitespace": 2,
+      "hygiene/final-newline": 1
+    },
+    "/tmp/qr-corpus/anthropic/template/SKILL.md": {
+      "desc/no-trigger-phrase": 1,
+      "fm/name-mismatch-dir": 1
+    },
+    "/tmp/qr-corpus/obra/skills/brainstorming/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/obra/skills/writing-skills/SKILL.md": {
+      "body/too-long": 1,
+      "hygiene/trailing-whitespace": 1
+    },
+    "/tmp/qr-corpus/vercel/skills/find-skills/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/README/SKILL.md": {
+      "parse/missing-frontmatter": 1,
+      "desc/too-short": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/TEMPLATE/SKILL.md": {
+      "desc/no-trigger-phrase": 1,
+      "fm/name-mismatch-dir": 1,
+      "fm/unknown-field": 4
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/a11y-audit/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/ab-test-setup/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/ad-creative/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/adversarial-reviewer/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/missing-allowed-tools": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/aeo/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 4
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/agent-designer/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/agent-protocol/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 2,
+      "fm/unknown-field": 1,
+      "hygiene/trailing-whitespace": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/agent-workflow-designer/SKILL.md": {
+      "desc/too-long": 1,
+      "hygiene/trailing-whitespace": 2
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/agenthub/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/vague-trigger": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/agile-product-owner/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 2
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/ai-act-readiness/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/ai-security/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/aims-audit/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/analytics-tracking/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1,
+      "hygiene/trailing-whitespace": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/andreessen/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/api-design-reviewer/SKILL.md": {
+      "desc/too-long": 1,
+      "hygiene/trailing-whitespace": 8,
+      "hygiene/final-newline": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/app-store-optimization/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/apple-hig-expert/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/atlassian-admin/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/atlassian-templates/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/autoresearch-agent/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 2,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/aws-solution-architect/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/azure-cloud-architect/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/behuman/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/board/SKILL.md": {
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/board-deck-builder/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/board-meeting/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 7,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/board-prep/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/boardroom/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 2
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/brand-guidelines/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/brief/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 3
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/business-growth-skills/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/business-investment-advisor/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/business-operations-skills/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/missing-allowed-tools": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/c-level-agents/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/c-level-skills/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 2,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/caio-review/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/campaign-analytics/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/capa-officer/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/capacity-planner/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/missing-allowed-tools": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/capture/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/caveman/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/cco-review/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/cdo-review/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/ceo-advisor/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/cfo-advisor/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/challenge/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/change-management/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/changelog/SKILL.md": {
+      "desc/no-trigger-phrase": 1,
+      "fm/name-mismatch-dir": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/changelog-generator/SKILL.md": {
+      "desc/too-long": 1,
+      "hygiene/trailing-whitespace": 2
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/channel-economics/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/chaos-engineering/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/chaos-experiment/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/chief-ai-officer-advisor/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/ali/.gemini/skills/chief-customer-officer-advisor/SKILL.md": {
+      "desc/too-long": 1,
+      "fm/unknown-field": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/agency-os/skills/agency-os/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/audit/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/background/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/bridge/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/cache/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 4
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/deploy/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/design/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/dispatch/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/flush/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/handoff/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/hyperflow/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/vague-trigger": 1,
+      "body/absolute-user-path": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/issue/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/plan/SKILL.md": {
+      "desc/too-long": 1,
+      "desc/vague-trigger": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/pr/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/scaffold/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 4
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/status/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/sticky/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/trace/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/hyperflow/skills/workflow/SKILL.md": {
+      "desc/too-long": 1,
+      "body/absolute-user-path": 2
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/shipwright/skills/shipwright-pipeline/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/buzz-devrel/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/buzz-hn/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/buzz-outreach/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/ink-brief/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/ink-cluster/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/ink-distribute/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/pitch-copy/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/pitch-launch/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/pitch-message/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/pitch-position/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/marketing-team/skills/pitch-recon/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/deal-outreach/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/deal-proposal/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/deal-qualify/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/keep-churn/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/keep-qbr/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/keep-segment/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/surge-activation/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/surge-experiment/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/surge-plg/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/surge-recon/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/bundle/revenue-team/skills/surge-retention/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/apex/SKILL.md": {
+      "desc/no-trigger-phrase": 1,
+      "desc/vague-trigger": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/apex-recon/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/atlas/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/atlas-map/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/atlas-onboard/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/atlas-present/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz-community/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz-launch/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz-pitch/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz-recon/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/buzz-social/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/cortex/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest-compete/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest-narrative/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest-okr/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest-recon/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/crest-roadmap/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/deal/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/deal-close/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/deal-pipeline/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/deal-pricing/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/deal-recon/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft-flow/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft-ia/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft-recon/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft-review/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/draft-wireframe/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo-feedback/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo-interview/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo-jobs/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo-recon/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/echo-segment/SKILL.md": {
+      "desc/too-long": 1
+    },
+    "/tmp/qr-corpus/jeremy/plugins/ai-agency/tonone/skills/flux/SKILL.md": {
+      "desc/no-trigger-phrase": 1
+    }
+  }
+}
