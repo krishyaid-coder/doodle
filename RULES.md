@@ -1,6 +1,6 @@
 # doodle: v0 Rule Specification
 
-A static linter for Claude `SKILL.md` files. Rules below are grounded in 19 real-world samples and Anthropic's official authoring guide.
+A static linter for Claude `SKILL.md` files. Rules below are grounded in Anthropic's official authoring guide and empirical evidence from a 200-skill corpus (see the [Quality Report](./docs/QUALITY_REPORT.md)).
 
 ---
 
@@ -25,7 +25,7 @@ doodle auto-detects dialect by frontmatter shape; users can force with `--dialec
 
 ---
 
-## v0 ruleset (12 rules)
+## Current ruleset (15 rules)
 
 ### Category: description
 
@@ -102,7 +102,7 @@ doodle auto-detects dialect by frontmatter shape; users can force with `--dialec
 **Both dialects.** Body contains emoji characters.
 
 - Why: Anthropic style guide discourages emoji in skill bodies; keeps tone consistent with default agent behavior.
-- In-sample frequency: 109 hits across 62-skill corpus — confirmed too noisy to enable by default.
+- In-sample frequency in the June 62-skill corpus: 109 hits. Confirmed too noisy to enable by default; kept off in later corpus runs.
 - **Default: disabled.** Enable via `--strict` or `[severity] "body/emoji" = "info"` in `.doodle.toml`.
 
 ---

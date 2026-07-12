@@ -39,7 +39,7 @@ flowchart LR
 3. **Severity is a contract.** `error` blocks CI. `warning` degrades quality. `info` is style. Promotion is the user's call (`--strict`), never ours.
 4. **Dialects are first-class.** Two `SKILL.md` schemas exist in the wild. The architecture treats them as enums, not as if-statements scattered through the code.
 5. **No fixing in v0.** doodle reports. Authors fix. `--fix` is roadmap; doing it wrong destroys trust faster than no fix at all.
-6. **Stdlib first.** Two runtime deps (`PyYAML`, `tomli` on <3.11). Adding a third requires a written justification.
+6. **Small dep footprint.** Three runtime deps (`PyYAML`, `tomli` on <3.11, `pyspellchecker` since v0.6). Adding another requires a written justification. Optional extras (`anthropic` for Phase 2 eval) stay opt-in.
 
 ---
 
@@ -77,6 +77,9 @@ flowchart TB
 | [`rules/custom.py`](../src/doodle/rules/custom.py) | Materializes `CustomRuleSpec` (from config) into `(Rule, checker)` pairs that plug into the registry alongside built-ins. Supports `pattern` and `frontmatter-required` kinds today. | New kind: add a `_check_<kind>` function and a branch in `build_custom_checks`. |
 | [`fixers.py`](../src/doodle/fixers.py) | Auto-fixers for rules marked `fixable=True`. Each fixer takes a `ParsedSkill` and returns the new file contents (or `None`). CLI applies fixes in sequence with re-parsing between each. | New fixer: add a function, then add it to the `FIXERS` dict keyed by `rule_id`. Mark the matching `Rule` with `fixable=True`. |
 | [`eval/`](../src/doodle/eval/) | Phase 2 trigger-accuracy harness. `schema.py` defines `EvalSuite` + result types; `promptfoo.py` generates Promptfoo configs and parses results; `generate.py` uses the Anthropic SDK to draft starter eval.yamls; `runner.py` orchestrates and formats. Soft-dep on `anthropic` (via `[eval]` extra) + on the `promptfoo` Node binary in PATH. | Changes to Promptfoo's `skill-used` schema land in `promptfoo.py:build_config`. Everything else stays the same. |
+| [`init.py`](../src/doodle/init.py) | `doodle init <name>` — scaffolds a compliant SKILL.md and optional `eval.yaml`. Templates for `anthropic` and `extended` dialects are tuned to pass the linter with zero warnings on first run. | New dialect template: add a constant and a branch in `scaffold()`. New scaffold artifact (e.g. `promptfooconfig.yaml`): add a template + write path. |
+| [`badge.py`](../src/doodle/badge.py) | `doodle badge <SKILL.md>` — computes a grade from lint findings (A+/A/B/C/D/F) and renders a shields.io-backed markdown snippet. Grade rubric is a pure function so tests + future badge endpoints share it. | Grade rubric tuning: `grade_from_findings()`. New output format: extend `format_badge()` and add to the CLI `--format` choices. |
+| [`rules/spelling.py`](../src/doodle/rules/spelling.py) | `desc/typo` rule. Wraps `pyspellchecker` (~160k-word dictionary) with a curated `BUILTIN_ALLOWLIST` for AI, dev, and Claude-ecosystem vocabulary. Users extend via `[spelling] allow = [...]` in `.doodle.toml`. Default disabled because domain vocabulary varies. | Add more built-in vocabulary in `BUILTIN_ALLOWLIST`; the check itself is stable. |
 | [`vscode/`](../vscode/) | Phase 3 VS Code extension (TypeScript). Intentionally thin: spawns the `doodle` CLI with `--format=json` on `SKILL.md` changes, converts findings to VS Code diagnostics. Quick-fix code actions for rules in `FIXABLE_RULES`. ~250 LOC; bundles no Python. | New fixable rule: add the rule_id to `FIXABLE_RULES` in `vscode/src/extension.ts`. New extension command: add to `package.json` `contributes.commands` and `registerCommand` in `extension.ts`. |
 
 ---
@@ -240,18 +243,38 @@ doodle/
 │       └── mascot-no-bg.svg
 ├── src/doodle/
 │   ├── __init__.py
-│   ├── cli.py                     # entry: `doodle ...`
+│   ├── cli.py                     # entry: `doodle lint | eval | init | badge`
 │   ├── parser.py
 │   ├── models.py
-│   ├── formatters.py
+│   ├── config.py                  # loads `.doodle.toml`
+│   ├── formatters.py              # text, JSON, SARIF
+│   ├── fixers.py                  # `doodle --fix`
+│   ├── badge.py                   # `doodle badge`
+│   ├── init.py                    # `doodle init`
+│   ├── eval/                      # `doodle eval` — Phase 2 harness
+│   │   ├── __init__.py
+│   │   ├── schema.py
+│   │   ├── promptfoo.py
+│   │   ├── generate.py
+│   │   └── runner.py
 │   └── rules/
 │       ├── __init__.py            # registry
-│       ├── description.py
-│       ├── body.py
-│       ├── frontmatter.py
-│       └── hygiene.py
+│       ├── description.py         # desc/* rules
+│       ├── body.py                # body/* rules
+│       ├── frontmatter.py         # fm/* rules
+│       ├── hygiene.py             # hygiene/* rules
+│       ├── spelling.py            # desc/typo
+│       └── custom.py              # rules loaded from `.doodle.toml`
 ├── tests/
 │   ├── test_rules.py
+│   ├── test_config.py
+│   ├── test_fixers.py
+│   ├── test_hygiene.py
+│   ├── test_formatters.py
+│   ├── test_init.py
+│   ├── test_badge.py
+│   ├── test_eval.py
+│   ├── test_spelling.py
 │   └── fixtures/                  # SKILL.md fixtures, one per scenario
 └── .github/workflows/ci.yml
 ```

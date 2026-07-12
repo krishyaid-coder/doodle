@@ -11,9 +11,9 @@
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-1a1a1a?style=flat-square" alt="MIT"/></a>
-  <a href="./RULES.md"><img src="https://img.shields.io/badge/rules-12-1a1a1a?style=flat-square" alt="12 rules"/></a>
+  <a href="./RULES.md"><img src="https://img.shields.io/badge/rules-15-1a1a1a?style=flat-square" alt="15 rules"/></a>
   <a href="https://open-vsx.org/extension/krishyaid-coder/doodle-lint"><img src="https://img.shields.io/badge/vscode-open%20vsx-1a1a1a?style=flat-square" alt="Open VSX"/></a>
-  <a href="./docs/QUALITY_REPORT.md"><img src="https://img.shields.io/badge/quality%20report-62%20skills-1a1a1a?style=flat-square" alt="Quality Report"/></a>
+  <a href="./docs/QUALITY_REPORT.md"><img src="https://img.shields.io/badge/quality%20report-200%20skills-1a1a1a?style=flat-square" alt="Quality Report"/></a>
 </p>
 
 ---
@@ -30,7 +30,7 @@ doodle closes that gap. Twelve static rules, each citing Anthropic's authoring g
 pip install doodle-lint
 ```
 
-Requires Python 3.10 or newer. Runtime dependencies: `PyYAML`, and `tomli` on Python 3.10. PyPI publication is pending; once complete, `pip install doodle-lint` will work.
+Requires Python 3.10 or newer. Runtime dependencies: `PyYAML`, `pyspellchecker`, and `tomli` on Python 3.10. PyPI publication is pending; once complete, `pip install doodle-lint` will work.
 
 Verify:
 
@@ -173,7 +173,7 @@ doodle badge SKILL.md --link=https://github.com/you/your-skills   # override the
 
 ## Architecture
 
-One Python package, six source files. Data flow: files → parser → rule registry → severity gate → formatter.
+One small Python package. Data flow: files → parser → rule registry → severity gate → formatter.
 
 ```mermaid
 flowchart LR
@@ -260,13 +260,15 @@ Config is discovered by walking up the directory tree. Force a path with `--conf
 
 ## Validation
 
-I ran doodle against 62 published `SKILL.md` files from the most-popular repositories: [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) (33k stars), [anthropics/skills](https://github.com/anthropics/skills), [obra/superpowers](https://github.com/obra/superpowers), and [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills). 82 percent of the sample had at least one quality finding, including Anthropic's own first-party skills and ponytail's reference skill.
+I ran doodle against **200 published `SKILL.md` files** across six repositories: [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail), [anthropics/skills](https://github.com/anthropics/skills), [obra/superpowers](https://github.com/obra/superpowers), [vercel-labs/skills](https://github.com/vercel-labs/skills), [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills), and [jeremylongshore/claude-code-plugins-plus-skills](https://github.com/jeremylongshore/claude-code-plugins-plus-skills). 81 percent of the sample had at least one quality finding. The rate is statistically identical to the June edition's 62-skill sample (82 percent), confirming the signal is not sampling artifact.
+
+Standout results: obra/superpowers is 86 percent clean; anthropic first-party is 6 percent clean (1 of 18); ponytail is 0 for 6.
 
 Full methodology, per-repository breakdown, and raw data: [docs/QUALITY_REPORT.md](./docs/QUALITY_REPORT.md).
 
 ## Documentation
 
-- [Quality Report](./docs/QUALITY_REPORT.md): findings across 62 published skills, with methodology and raw data
+- [Quality Report](./docs/QUALITY_REPORT.md): findings across 200 published skills, with methodology and raw data (July 2026 refresh)
 - [Architecture](./docs/ARCHITECTURE.md): diagrams, components, extension points, trade-offs
 - [Rule spec](./RULES.md): every rule with citation, example, and in-sample frequency
 - [Extending](./docs/EXTENDING.md): add a rule in Python or via `.doodle.toml`

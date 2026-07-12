@@ -11,7 +11,7 @@ In late 2025, Anthropic shipped a new format for extending Claude: `SKILL.md`. A
 Three things are true at once:
 
 1. **Authoring is harder than it looks.** Anthropic's own issue tracker quantifies the failure modes: [`anthropics/skills#267`](https://github.com/anthropics/skills/issues/267) attributes **80%** of trigger failures to vague descriptions, **60%** to missing keywords, **30%** to conflicting triggers.
-2. **Most skills in the wild don't follow the rules.** We sampled 19 published `SKILL.md` files from the most-starred community repos (ponytail at 33k ⭐, alirezarezvani/claude-skills at 5.2k ⭐, jeremylongshore's 2.8k-skill pack). Roughly **40–60%** have at least one clear quality smell: a 770-character description, a 1,247-line body, hardcoded `/Users/` paths, emoji in places the style guide discourages.
+2. **Most skills in the wild don't follow the rules.** We sampled **200 published `SKILL.md` files** across six repositories (ponytail, anthropics/skills, obra/superpowers, vercel-labs/skills, alirezarezvani, jeremylongshore) and ran doodle against them. **81% had at least one quality finding.** The same analysis on a 62-skill subset in June returned 82%, so the signal is robust across a 3× larger sample. Full methodology and raw data: [QUALITY_REPORT.md](./QUALITY_REPORT.md).
 3. **There is no quality bar.** Marketplaces accept submissions without checks. Anthropic's docs link to no community tooling. Authors have no way to know if their skill will actually fire before they ship it.
 
 doodle is the smallest useful step in front of that gap.
@@ -36,10 +36,10 @@ If none of these happen in six months, the project failed and we should say so o
 
 This is the question we keep coming back to. Honest version:
 
-- **It's grounded in real data, not vibes.** Every v0 rule has an in-sample frequency from 19 published skills. The vague-trigger blocklist is sourced from the exact phrases Anthropic flagged in `#267`. Rules with zero in-sample frequency stayed in the deferred list.
+- **It's grounded in real data, not vibes.** Every rule has an in-sample frequency from a 200-skill corpus. The vague-trigger blocklist is sourced from the exact phrases Anthropic flagged in `#267`. Rules with zero in-sample frequency stayed in the deferred list.
 - **It respects the dialect split.** Anthropic-style minimal frontmatter and the community-extended schema diverge in the wild. A linter that ignores that is preachy and gets uninstalled.
 - **It has a path to trigger-accuracy.** Static checks alone don't catch the most important class of bugs — "this skill never fires." [Promptfoo](https://www.promptfoo.dev/docs/guides/test-agent-skills/) ships a `skill-used` assertion. Our Phase 2 wraps it. Nobody else has put these two halves together.
-- **It's small enough to read in an afternoon.** Twelve rules, six source files, two runtime deps. The entire architecture is in [ARCHITECTURE.md](./ARCHITECTURE.md). Contribution friction is low.
+- **It's small enough to read in an afternoon.** Fifteen rules, a compact Python package, three runtime deps. The entire architecture is in [ARCHITECTURE.md](./ARCHITECTURE.md). Contribution friction is low.
 
 ---
 
