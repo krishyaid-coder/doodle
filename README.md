@@ -119,6 +119,40 @@ Full extension docs: [vscode/README.md](./vscode/README.md).
 
 Each rule cites either Anthropic's authoring documentation or a documented community issue. Full spec with examples, in-sample frequency, and citations: [RULES.md](./RULES.md).
 
+## Quality badge
+
+Skill authors can advertise the doodle grade of their `SKILL.md` in the skill's own README:
+
+```bash
+doodle badge path/to/SKILL.md
+```
+
+Prints a shields.io-backed markdown snippet, for example:
+
+```markdown
+[![doodle A](https://img.shields.io/badge/doodle-A-green?style=flat-square)](https://github.com/krishyaid-coder/doodle)
+```
+
+Grade rubric:
+
+| Grade | Meaning                                                            |
+| ----- | ------------------------------------------------------------------ |
+| A+    | Zero findings                                                      |
+| A     | Info-level findings only                                           |
+| B     | 1 or 2 warnings, no errors                                         |
+| C     | 3 or 4 warnings, no errors                                         |
+| D     | 5 or more warnings, no errors                                      |
+| F     | Any error (skill will misload or fail to trigger)                  |
+
+The badge reflects the same rules `doodle lint` would apply today, respecting your `.doodle.toml` overrides. Other formats:
+
+```bash
+doodle badge SKILL.md --format=url    # just the shields.io URL
+doodle badge SKILL.md --format=text   # just the grade letter
+doodle badge SKILL.md --format=json   # structured, includes finding counts
+doodle badge SKILL.md --link=https://github.com/you/your-skills   # override the badge target
+```
+
 | Rule                        | Severity                 | Fixable | Description                                            |
 | --------------------------- | ------------------------ | ------- | ------------------------------------------------------ |
 | `desc/too-long`             | warning                  | no      | Description longer than 250 characters                 |
@@ -215,7 +249,8 @@ Config is discovered by walking up the directory tree. Force a path with `--conf
 | vscode 0.2      | VS Code extension on Open VSX Registry                                                       | shipped   |
 | v0.5            | `doodle init` skill scaffold that passes the linter out of the box                           | shipped   |
 | v0.6            | `desc/typo` spelling check backed by pyspellchecker, with a curated allowlist for AI vocabulary | shipped   |
-| v0.7 (next)     | `doodle badge` quality badges, expanded auto-fix coverage, refreshed 200-skill Quality Report | planned   |
+| v0.7            | `doodle badge` quality badges (shields.io-backed, A+/A/B/C/D/F rubric)                       | shipped   |
+| v0.8 (next)     | Expanded auto-fix coverage, refreshed 200-skill Quality Report                               | planned   |
 | v1.0            | PyPI publication, community eval-suite library, pre-commit hook integration                  | planned   |
 | Phase 4         | Managed scanner and quality-badge dashboard for marketplace operators                        | exploring |
 | Phase 5         | LSP extraction for Neovim, Zed, JetBrains via the same rule engine                           | if demand |

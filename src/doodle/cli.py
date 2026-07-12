@@ -65,9 +65,103 @@ def main(argv: list[str] | None = None) -> int:
         return _main_eval(argv[1:])
     if argv and argv[0] == "init":
         return _main_init(argv[1:])
+    if argv and argv[0] == "badge":
+        return _main_badge(argv[1:])
     if argv and argv[0] == "lint":
         argv = argv[1:]
     return _main_lint(argv)
+
+
+def _main_badge(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(
+        prog="doodle badge",
+        description=(
+            "Generate a quality-grade badge for a SKILL.md, backed by "
+            "shields.io. Grade reflects the same findings 'doodle lint' would "
+            "report today: A+ (clean), A (info only), B/C/D (progressive warnings), "
+            "F (any error)."
+        ),
+    )
+    parser.add_argument("path", type=Path, help="Path to a single SKILL.md file.")
+    parser.add_argument(
+        "--format",
+        choices=["markdown", "url", "text", "json"],
+        default="markdown",
+        help="Output format (default: markdown).",
+    )
+    parser.add_argument(
+        "--link",
+        default=None,
+        help="Override the badge's target URL (default: doodle repo).",
+    )
+    parser.add_argument(
+        "--config",
+        type=Path,
+        default=None,
+        help="Path to a .doodle.toml config file (badge respects your overrides).",
+    )
+    parser.add_argument(
+        "--no-config",
+        action="store_true",
+        help="Skip auto-discovery of .doodle.toml.",
+    )
+    args = parser.parse_args(argv)
+
+    if not args.path.is_file():
+        print(f"doodle badge: file not found: {args.path}", file=sys.stderr)
+        return 3
+    if args.path.name != "SKILL.md":
+        print(
+            f"doodle badge: expected a SKILL.md file, got: {args.path.name}",
+            file=sys.stderr,
+        )
+        return 3
+
+    # Load config so severity overrides + user allowlists + custom rules apply
+    if args.no_config:
+        config = Config()
+    else:
+        config = load_config(explicit=args.config)
+
+    # Push user allowlist into spelling rule module
+    from .rules.spelling import set_user_allowlist
+    set_user_allowlist(config.spelling_allowlist)
+
+    custom_pairs = build_custom_checks(config.custom_rules)
+
+    # Compute effective disabled set (same logic as _main_lint but simpler:
+    # no --ignore, no --strict override at the badge layer)
+    disabled: set[str] = set()
+    for rule in all_rules():
+        if rule.default_enabled:
+            continue
+        override = config.severity_overrides.get(rule.id)
+        if override is None or override == "off":
+            disabled.add(rule.id)
+
+    forced_dialect: Dialect | None = None
+    if config.dialect and config.dialect != "auto":
+        forced_dialect = Dialect(config.dialect)
+
+    skill = parse_skill(args.path)
+    if forced_dialect is not None:
+        skill.dialect = forced_dialect
+    findings = list(
+        run_all(
+            skill,
+            disabled=disabled,
+            severity_overrides=config.severity_overrides,
+            custom_pairs=custom_pairs,
+            path_overrides=config.path_overrides,
+        )
+    )
+
+    from .badge import DEFAULT_BADGE_LINK, format_badge, grade_from_findings
+
+    report = grade_from_findings(findings)
+    link = args.link or DEFAULT_BADGE_LINK
+    print(format_badge(report, fmt=args.format, link=link))
+    return 0
 
 
 def _main_init(argv: list[str]) -> int:
