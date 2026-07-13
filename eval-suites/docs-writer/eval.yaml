@@ -1,0 +1,21 @@
+model: claude-sonnet-4-5
+
+should_fire:
+  - "write a README for this project"
+  - "document this API endpoint"
+  - "add docstrings to these functions"
+  - "produce reference documentation for this library"
+  - "write a getting-started guide"
+  - "draft the installation section for the README"
+  - "explain how to use this SDK in a doc"
+  - "add JSDoc comments to this module"
+  - "write user-facing documentation for this feature"
+  - "generate a CONTRIBUTING guide for this repo"
+
+should_not_fire:
+  - "review my documentation"
+  - "translate this README to Spanish"
+  - "shorten this README to fit in 500 characters"
+  - "run the docs build"
+  - "check that the code examples in my docs still work"
+  - "generate a marketing landing page"

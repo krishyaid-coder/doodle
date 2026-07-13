@@ -1,0 +1,21 @@
+model: claude-sonnet-4-5
+
+should_fire:
+  - "check this code for security issues"
+  - "audit this for OWASP top 10 concerns"
+  - "look for SQL injection risks in these queries"
+  - "scan this dependency list for CVEs"
+  - "review this for XSS vulnerabilities"
+  - "check for hardcoded secrets in this file"
+  - "audit the auth flow for security issues"
+  - "look at this for common web-security mistakes"
+  - "spot potential command injection here"
+  - "security review before I ship"
+
+should_not_fire:
+  - "review my code for bugs"
+  - "explain what SQL injection is"
+  - "write a new authentication system"
+  - "generate a security policy document"
+  - "check my code style"
+  - "run the linter"

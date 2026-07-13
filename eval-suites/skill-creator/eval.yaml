@@ -1,0 +1,21 @@
+model: claude-sonnet-4-5
+
+should_fire:
+  - "help me write a Claude skill for this task"
+  - "create a SKILL.md for the code-reviewer"
+  - "scaffold a new skill for handling PRs"
+  - "author a Claude skill that generates SQL"
+  - "improve the trigger accuracy of my SKILL.md"
+  - "help me tune the description on this skill"
+  - "generate a starter eval.yaml for my skill"
+  - "write a new agent skill for this workflow"
+  - "help me structure a SKILL.md for the security audit tool"
+  - "author a skill spec that will fire on the right prompts"
+
+should_not_fire:
+  - "run my Claude skill"
+  - "explain what a Claude skill is"
+  - "review my SKILL.md for issues"
+  - "install a Claude skill from the marketplace"
+  - "list my installed skills"
+  - "write me a Python function"

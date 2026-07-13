@@ -1,0 +1,21 @@
+model: claude-sonnet-4-5
+
+should_fire:
+  - "design a REST API for this feature"
+  - "sketch the endpoints for this service"
+  - "propose a GraphQL schema for these entities"
+  - "help me design the API for the checkout flow"
+  - "map out the endpoints for this resource"
+  - "design the request/response shapes for these operations"
+  - "propose the API contract between these services"
+  - "outline the endpoints and payloads for this microservice"
+  - "help me structure the public API for this SDK"
+  - "design the URL paths and verbs for this resource"
+
+should_not_fire:
+  - "implement this endpoint"
+  - "review my API for issues"
+  - "generate API docs from my code"
+  - "write tests for the API"
+  - "design the database schema"
+  - "explain what REST is"

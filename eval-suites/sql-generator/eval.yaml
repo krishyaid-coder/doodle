@@ -1,0 +1,21 @@
+model: claude-sonnet-4-5
+
+should_fire:
+  - "write a query to find users who signed up last week"
+  - "generate SQL for top 10 products by revenue"
+  - "SQL for the number of orders grouped by month"
+  - "give me a query to join orders and customers on the customer id"
+  - "produce a SELECT that returns active accounts with more than 5 events"
+  - "write SQL to compute the 90th percentile order value"
+  - "query for churned users in the last 30 days"
+  - "SQL to find duplicate email addresses in the users table"
+  - "write the query for the KPI dashboard"
+  - "generate a SQL statement for this reporting question"
+
+should_not_fire:
+  - "review the SQL I wrote"
+  - "explain what this query does"
+  - "optimize this SQL for a large table"
+  - "convert this SQL to Pandas"
+  - "help me design a database schema"
+  - "run this query against production"

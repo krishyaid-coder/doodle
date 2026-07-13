@@ -1,0 +1,21 @@
+model: claude-sonnet-4-5
+
+should_fire:
+  - "write unit tests for this function"
+  - "add pytest tests for the error cases"
+  - "generate integration tests for this API endpoint"
+  - "TDD this feature"
+  - "cover the edge cases with tests"
+  - "write jest tests for this component"
+  - "add coverage for the exception paths"
+  - "test the happy path and one failure mode"
+  - "generate table-driven tests for these inputs"
+  - "write regression tests for this bug"
+
+should_not_fire:
+  - "review the tests I wrote"
+  - "run the test suite"
+  - "explain why this test is failing"
+  - "improve the coverage report"
+  - "generate a mock fixture for this data"
+  - "convert my mocha tests to jest"

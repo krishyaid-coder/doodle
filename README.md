@@ -119,6 +119,32 @@ Full extension docs: [vscode/README.md](./vscode/README.md).
 
 Each rule cites either Anthropic's authoring documentation or a documented community issue. Full spec with examples, in-sample frequency, and citations: [RULES.md](./RULES.md).
 
+## Starter templates
+
+Category-specific templates for common skill types are shipped in [`eval-suites/`](./eval-suites/) and wired into `doodle init`:
+
+```bash
+doodle init --list-templates
+doodle init my-reviewer --template=code-reviewer --eval
+```
+
+The scaffold pairs a tuned SKILL.md description (passes the linter out of the box) with a matching `eval.yaml` containing category-appropriate `should_fire` and `should_not_fire` prompts. Available templates:
+
+| Template | For skills that... |
+| --- | --- |
+| `code-reviewer` | Review diffs, PRs, staged changes for correctness and security |
+| `refactorer` | Restructure code without changing observable behavior |
+| `sql-generator` | Write SQL from natural-language analytics questions |
+| `docs-writer` | Produce READMEs, API references, and docstrings |
+| `test-writer` | Author unit, integration, and end-to-end tests |
+| `security-auditor` | Audit code for OWASP issues, injection risks, and CVEs |
+| `debugger` | Investigate errors and find root causes |
+| `data-engineer` | Design ETL pipelines, dbt models, Airflow DAGs |
+| `api-designer` | Design REST endpoints, GraphQL schemas, service contracts |
+| `skill-creator` | Author or improve Claude skills |
+
+Full contributor guide for new templates: [eval-suites/README.md](./eval-suites/README.md).
+
 ## Quality badge
 
 Skill authors can advertise the doodle grade of their `SKILL.md` in the skill's own README:
@@ -253,7 +279,9 @@ Config is discovered by walking up the directory tree. Force a path with `--conf
 | v0.6            | `desc/typo` spelling check backed by pyspellchecker, with a curated allowlist for AI vocabulary | shipped   |
 | v0.7            | `doodle badge` quality badges (shields.io-backed, A+/A/B/C/D/F rubric)                       | shipped   |
 | v0.8            | Two new hygiene rules with auto-fix (trailing-whitespace, final-newline)                     | shipped   |
-| v0.9 (next)     | Refreshed 200-skill Quality Report, community eval-suite library                             | planned   |
+| Docs (July)     | Quality Report refreshed to 200 skills across 6 repos                                        | shipped   |
+| v0.9            | Community eval-suite library — 10 category templates (code-reviewer, refactorer, sql-generator, docs-writer, test-writer, security-auditor, debugger, data-engineer, api-designer, skill-creator) | shipped   |
+| v1.0 (next)     | PyPI publication + pre-commit hook integration                                               | planned   |
 | v1.0            | PyPI publication, community eval-suite library, pre-commit hook integration                  | planned   |
 | Phase 4         | Managed scanner and quality-badge dashboard for marketplace operators                        | exploring |
 | Phase 5         | LSP extraction for Neovim, Zed, JetBrains via the same rule engine                           | if demand |
@@ -274,6 +302,7 @@ Full methodology, per-repository breakdown, and raw data: [docs/QUALITY_REPORT.m
 - [Extending](./docs/EXTENDING.md): add a rule in Python or via `.doodle.toml`
 - [Eval guide](./docs/EVAL.md): Phase 2 trigger-accuracy workflow
 - [VS Code extension](./vscode/README.md): editor integration reference
+- [Starter templates](./eval-suites/README.md): community eval-suite library, one entry per skill category
 - [Why doodle](./docs/WHY.md): impact argument, honest risk assessment
 - [Contributing](./CONTRIBUTING.md): ground rules and PR checklist
 

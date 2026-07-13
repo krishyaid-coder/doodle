@@ -16,6 +16,19 @@ A skill can pass every static rule and still never fire when users phrase their 
 
 ---
 
+## Starter templates
+
+If your skill matches a common category, skip writing prompts from scratch. Ten starter templates ship with doodle:
+
+```bash
+doodle init --list-templates
+doodle init my-reviewer --template=code-reviewer --eval
+```
+
+The `--template` flag pairs a tuned SKILL.md with a matching `eval.yaml` (10 `should_fire` + 6 `should_not_fire` prompts curated for the category). Edit the prompts to match your specific skill's boundaries, then run `doodle eval` as normal.
+
+Available templates: `code-reviewer`, `refactorer`, `sql-generator`, `docs-writer`, `test-writer`, `security-auditor`, `debugger`, `data-engineer`, `api-designer`, `skill-creator`. Browse the reference eval.yamls at [`eval-suites/`](../eval-suites/).
+
 ## Install
 
 ```bash

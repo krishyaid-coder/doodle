@@ -1,0 +1,21 @@
+model: claude-sonnet-4-5
+
+should_fire:
+  - "refactor this function"
+  - "simplify this class"
+  - "extract this into a helper function"
+  - "reduce the duplication in this file"
+  - "clean up this code without changing behavior"
+  - "restructure this module for clarity"
+  - "break this up into smaller pieces"
+  - "improve the design of this without changing what it does"
+  - "make this more maintainable"
+  - "tidy up this implementation"
+
+should_not_fire:
+  - "review my code for bugs"
+  - "write a new implementation of this"
+  - "explain how this works"
+  - "add tests for this function"
+  - "optimize this for performance"
+  - "port this to another language"

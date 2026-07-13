@@ -1,0 +1,21 @@
+model: claude-sonnet-4-5
+
+should_fire:
+  - "design an ETL pipeline for this data source"
+  - "create an Airflow DAG for the ingestion job"
+  - "build a dbt model for user retention"
+  - "design the data pipeline for this analytics use case"
+  - "sketch a Kafka topic layout for these events"
+  - "help me structure the transformation logic in dbt"
+  - "design the incremental refresh strategy for this table"
+  - "propose a schema for this event stream"
+  - "help me set up the data ingestion for this API"
+  - "plan the batch pipeline for the nightly rollup"
+
+should_not_fire:
+  - "write a SQL query to get last-month signups"
+  - "review my Airflow DAG"
+  - "run the dbt build"
+  - "explain what a data warehouse is"
+  - "design an application backend"
+  - "write me a REST API"

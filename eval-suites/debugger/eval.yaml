@@ -1,0 +1,21 @@
+model: claude-sonnet-4-5
+
+should_fire:
+  - "help me debug this error"
+  - "why is this failing"
+  - "walk through this stack trace"
+  - "find the root cause of this bug"
+  - "investigate why this test is failing"
+  - "trace through this crash"
+  - "explain why this exception is being raised"
+  - "what's causing this timeout"
+  - "debug this weird behavior"
+  - "help me figure out why the output is wrong"
+
+should_not_fire:
+  - "fix this bug for me"
+  - "write me a new implementation"
+  - "review my code"
+  - "explain how this library works"
+  - "write logging statements for this function"
+  - "profile this for performance"

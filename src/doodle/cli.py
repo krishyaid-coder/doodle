@@ -175,6 +175,8 @@ def _main_init(argv: list[str]) -> int:
     parser.add_argument(
         "name",
         type=str,
+        nargs="?",
+        default=None,
         help="Skill name in kebab-case (letters, digits, hyphens).",
     )
     parser.add_argument(
@@ -205,7 +207,28 @@ def _main_init(argv: list[str]) -> int:
         default="",
         help="Author for the extended-dialect frontmatter.",
     )
+    parser.add_argument(
+        "--template",
+        default=None,
+        help="Use a category-specific starter template (see --list-templates).",
+    )
+    parser.add_argument(
+        "--list-templates",
+        action="store_true",
+        help="List available category templates and exit.",
+    )
     args = parser.parse_args(argv)
+
+    if args.list_templates:
+        from .templates import list_templates
+        for tpl in list_templates():
+            print(f"  {tpl.name:<20}  {tpl.summary}")
+        return 0
+
+    if args.name is None:
+        parser.print_usage(sys.stderr)
+        print("doodle init: 'name' is required (or use --list-templates)", file=sys.stderr)
+        return 3
 
     from .init import InitError, InitOptions, scaffold
 
@@ -217,6 +240,7 @@ def _main_init(argv: list[str]) -> int:
         include_eval=args.include_eval,
         force=args.force,
         author=args.author,
+        template=args.template,
     )
     try:
         created = scaffold(options)

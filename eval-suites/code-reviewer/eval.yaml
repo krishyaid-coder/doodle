@@ -1,0 +1,21 @@
+model: claude-sonnet-4-5
+
+should_fire:
+  - "review my staged changes"
+  - "look at this diff before I commit"
+  - "security pass on this pull request"
+  - "audit my PR before I open it"
+  - "check the changes I'm about to push"
+  - "review this patch"
+  - "spot-check my code changes"
+  - "walk through my staged diff"
+  - "look for issues in what I'm about to commit"
+  - "review before I merge to main"
+
+should_not_fire:
+  - "write me a new function"
+  - "explain what this code does"
+  - "format this file with prettier"
+  - "help me understand this codebase"
+  - "run the tests"
+  - "generate documentation for this module"
