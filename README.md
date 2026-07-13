@@ -105,6 +105,31 @@ The extension shells out to the CLI installed above. Upgrading the CLI upgrades 
 
 Full extension docs: [vscode/README.md](./vscode/README.md).
 
+## Pre-commit hook
+
+If your project uses [pre-commit](https://pre-commit.com/), add doodle in four lines:
+
+```yaml
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/krishyaid-coder/doodle
+    rev: v1.0.0
+    hooks:
+      - id: doodle
+```
+
+Then:
+
+```bash
+pre-commit install
+git commit -m "test"    # doodle runs automatically on any changed SKILL.md files
+```
+
+Two hooks are provided:
+
+- `doodle` — runs by default on every commit, blocks commits that produce warnings or errors
+- `doodle-fix` — runs manually via `pre-commit run doodle-fix --all-files`, applies safe auto-fixes and stages the results
+
 ## CI (GitHub Action)
 
 ```yaml
@@ -281,7 +306,8 @@ Config is discovered by walking up the directory tree. Force a path with `--conf
 | v0.8            | Two new hygiene rules with auto-fix (trailing-whitespace, final-newline)                     | shipped   |
 | Docs (July)     | Quality Report refreshed to 200 skills across 6 repos                                        | shipped   |
 | v0.9            | Community eval-suite library — 10 category templates (code-reviewer, refactorer, sql-generator, docs-writer, test-writer, security-auditor, debugger, data-engineer, api-designer, skill-creator) | shipped   |
-| v1.0 (next)     | PyPI publication + pre-commit hook integration                                               | planned   |
+| **v1.0**        | **Stable release. PyPI published. Pre-commit hook integration.**                             | shipped   |
+| Phase 4         | Managed scanner and quality-badge dashboard for marketplace operators (paid service)         | exploring, waits for demand |
 | v1.0            | PyPI publication, community eval-suite library, pre-commit hook integration                  | planned   |
 | Phase 4         | Managed scanner and quality-badge dashboard for marketplace operators                        | exploring |
 | Phase 5         | LSP extraction for Neovim, Zed, JetBrains via the same rule engine                           | if demand |

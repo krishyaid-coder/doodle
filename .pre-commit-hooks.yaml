@@ -1,0 +1,19 @@
+- id: doodle
+  name: doodle (lint SKILL.md)
+  description: Lint Claude SKILL.md files with doodle.
+  entry: doodle
+  language: python
+  types: [markdown]
+  files: SKILL\.md$
+  minimum_pre_commit_version: '2.9.0'
+
+- id: doodle-fix
+  name: doodle --fix (auto-fix safe issues)
+  description: Auto-fix safe hygiene issues in SKILL.md files (trailing whitespace, blank lines, missing final newline, emoji if enabled). Run manually via `pre-commit run doodle-fix --all-files`.
+  entry: doodle
+  args: ['--fix']
+  language: python
+  types: [markdown]
+  files: SKILL\.md$
+  stages: [manual]
+  minimum_pre_commit_version: '2.9.0'
