@@ -308,8 +308,6 @@ Config is discovered by walking up the directory tree. Force a path with `--conf
 | v0.9            | Community eval-suite library — 10 category templates (code-reviewer, refactorer, sql-generator, docs-writer, test-writer, security-auditor, debugger, data-engineer, api-designer, skill-creator) | shipped   |
 | **v1.0**        | **Stable release. PyPI published. Pre-commit hook integration.**                             | shipped   |
 | Phase 4         | Managed scanner and quality-badge dashboard for marketplace operators (paid service)         | exploring, waits for demand |
-| v1.0            | PyPI publication, community eval-suite library, pre-commit hook integration                  | planned   |
-| Phase 4         | Managed scanner and quality-badge dashboard for marketplace operators                        | exploring |
 | Phase 5         | LSP extraction for Neovim, Zed, JetBrains via the same rule engine                           | if demand |
 
 ## Validation
