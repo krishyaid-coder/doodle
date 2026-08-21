@@ -1,0 +1,772 @@
+[
+  {
+    "repo": "DietrichGebert/ponytail",
+    "path": "ponytail/skills/ponytail-help/SKILL.md",
+    "name": "ponytail-help",
+    "desc_len": 200,
+    "fire": 0.2802,
+    "nofire": 0.25,
+    "margin": 0.0302,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "anthropic/skills/academy-guide/SKILL.md",
+    "name": "academy-guide",
+    "desc_len": 993,
+    "fire": 0.281,
+    "nofire": 0.4028,
+    "margin": -0.1218,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "anthropic/skills/canvas-design/SKILL.md",
+    "name": "canvas-design",
+    "desc_len": 289,
+    "fire": 0.226,
+    "nofire": 0.25,
+    "margin": -0.024,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "anthropic/skills/docx/SKILL.md",
+    "name": "docx",
+    "desc_len": 835,
+    "fire": 0.266,
+    "nofire": 0.25,
+    "margin": 0.016,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "anthropic/skills/internal-comms/SKILL.md",
+    "name": "internal-comms",
+    "desc_len": 329,
+    "fire": 0.3402,
+    "nofire": 0.4583,
+    "margin": -0.1181,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "anthropic/skills/pdf/SKILL.md",
+    "name": "pdf",
+    "desc_len": 437,
+    "fire": 0.266,
+    "nofire": 0.25,
+    "margin": 0.016,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "anthropic/skills/pptx/SKILL.md",
+    "name": "pptx",
+    "desc_len": 732,
+    "fire": 0.246,
+    "nofire": 0.25,
+    "margin": -0.004,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "anthropic/skills/skill-creator/SKILL.md",
+    "name": "skill-creator",
+    "desc_len": 319,
+    "fire": 0.371,
+    "nofire": 0.3056,
+    "margin": 0.0654,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "anthropic/skills/webapp-testing/SKILL.md",
+    "name": "webapp-testing",
+    "desc_len": 204,
+    "fire": 0.1817,
+    "nofire": 0.2083,
+    "margin": -0.0267,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "anthropic/skills/xlsx/SKILL.md",
+    "name": "xlsx",
+    "desc_len": 948,
+    "fire": 0.306,
+    "nofire": 0.3056,
+    "margin": 0.0004,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "anthropic/template/SKILL.md",
+    "name": "template-skill",
+    "desc_len": 68,
+    "fire": 0.266,
+    "nofire": 0.4028,
+    "margin": -0.1368,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "obra/superpowers",
+    "path": "obra/skills/finishing-a-development-branch/SKILL.md",
+    "name": "finishing-a-development-branch",
+    "desc_len": 101,
+    "fire": 0.1817,
+    "nofire": 0.2083,
+    "margin": -0.0267,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "obra/superpowers",
+    "path": "obra/skills/receiving-code-review/SKILL.md",
+    "name": "receiving-code-review",
+    "desc_len": 234,
+    "fire": 0.2167,
+    "nofire": 0.0833,
+    "margin": 0.1333,
+    "source": "template:code-reviewer"
+  },
+  {
+    "repo": "obra/superpowers",
+    "path": "obra/skills/systematic-debugging/SKILL.md",
+    "name": "systematic-debugging",
+    "desc_len": 91,
+    "fire": 0.2233,
+    "nofire": 0.2083,
+    "margin": 0.015,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "obra/superpowers",
+    "path": "obra/skills/using-superpowers/SKILL.md",
+    "name": "using-superpowers",
+    "desc_len": 154,
+    "fire": 0.201,
+    "nofire": 0.25,
+    "margin": -0.049,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "obra/superpowers",
+    "path": "obra/skills/writing-skills/SKILL.md",
+    "name": "writing-skills",
+    "desc_len": 97,
+    "fire": 0.266,
+    "nofire": 0.25,
+    "margin": 0.016,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/ux-researcher-designer/SKILL.md",
+    "name": "ux-researcher-designer",
+    "desc_len": 303,
+    "fire": 0.1817,
+    "nofire": 0.2083,
+    "margin": -0.0267,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/c-level-advisor/skills/scenario-war-room/SKILL.md",
+    "name": "scenario-war-room",
+    "desc_len": 325,
+    "fire": 0.2067,
+    "nofire": 0.2083,
+    "margin": -0.0017,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/experiment-designer/SKILL.md",
+    "name": "experiment-designer",
+    "desc_len": 174,
+    "fire": 0.2567,
+    "nofire": 0.2083,
+    "margin": 0.0483,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/marketing-skill/skills/ab-test-setup/SKILL.md",
+    "name": "ab-test-setup",
+    "desc_len": 341,
+    "fire": 0.1817,
+    "nofire": 0.2083,
+    "margin": -0.0267,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/prompt-governance/SKILL.md",
+    "name": "prompt-governance",
+    "desc_len": 532,
+    "fire": 0.3317,
+    "nofire": 0.2639,
+    "margin": 0.0678,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/compliance-os/skills/iso27001-audit-prep/SKILL.md",
+    "name": "iso27001-audit-prep",
+    "desc_len": 204,
+    "fire": 0.1667,
+    "nofire": 0.0,
+    "margin": 0.1667,
+    "source": "template:code-reviewer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/productivity/andreessen/skills/andreessen/SKILL.md",
+    "name": "andreessen",
+    "desc_len": 983,
+    "fire": 0.2176,
+    "nofire": 0.3056,
+    "margin": -0.0879,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/adversarial-reviewer/SKILL.md",
+    "name": "adversarial-reviewer",
+    "desc_len": 355,
+    "fire": 0.3933,
+    "nofire": 0.0833,
+    "margin": 0.31,
+    "source": "template:code-reviewer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/engineering-team/playwright-pro/skills/pw/SKILL.md",
+    "name": "playwright-pro",
+    "desc_len": 345,
+    "fire": 0.2433,
+    "nofire": 0.4167,
+    "margin": -0.1733,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/c-level-advisor/c-level-agents/skills/gc-review/SKILL.md",
+    "name": "gc-review",
+    "desc_len": 265,
+    "fire": 0.2033,
+    "nofire": 0.0556,
+    "margin": 0.1478,
+    "source": "template:code-reviewer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/skills-slo-architect/SKILL.md",
+    "name": "slo-architect",
+    "desc_len": 701,
+    "fire": 0.221,
+    "nofire": 0.2917,
+    "margin": -0.0707,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/syllabus/SKILL.md",
+    "name": "syllabus",
+    "desc_len": 911,
+    "fire": 0.286,
+    "nofire": 0.3611,
+    "margin": -0.0752,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/skill-tester/SKILL.md",
+    "name": "skill-tester",
+    "desc_len": 460,
+    "fire": 0.3062,
+    "nofire": 0.3056,
+    "margin": 0.0006,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/productivity/roast/skills/roast/SKILL.md",
+    "name": "roast",
+    "desc_len": 405,
+    "fire": 0.1983,
+    "nofire": 0.2083,
+    "margin": -0.01,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/product-team/research-summarizer/skills/research-summarizer/SKILL.md",
+    "name": "research-summarizer",
+    "desc_len": 436,
+    "fire": 0.3602,
+    "nofire": 0.4028,
+    "margin": -0.0425,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/landing-page-generator/SKILL.md",
+    "name": "landing-page-generator",
+    "desc_len": 656,
+    "fire": 0.3183,
+    "nofire": 0.3333,
+    "margin": -0.015,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/engineering-team/a11y-audit/skills/a11y-audit/SKILL.md",
+    "name": "a11y-audit",
+    "desc_len": 338,
+    "fire": 0.2552,
+    "nofire": 0.25,
+    "margin": 0.0052,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/engineering/code-tour/skills/code-tour/SKILL.md",
+    "name": "code-tour",
+    "desc_len": 328,
+    "fire": 0.2117,
+    "nofire": 0.2222,
+    "margin": -0.0106,
+    "source": "template:code-reviewer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/engineering-team/playwright-pro/skills/browserstack/SKILL.md",
+    "name": "browserstack",
+    "desc_len": 182,
+    "fire": 0.1817,
+    "nofire": 0.2639,
+    "margin": -0.0822,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/engineering/skills/database-schema-designer/SKILL.md",
+    "name": "database-schema-designer",
+    "desc_len": 129,
+    "fire": 0.165,
+    "nofire": 0.0556,
+    "margin": 0.1094,
+    "source": "template:data-engineer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/ship-gate/SKILL.md",
+    "name": "ship-gate",
+    "desc_len": 418,
+    "fire": 0.335,
+    "nofire": 0.2917,
+    "margin": 0.0433,
+    "source": "template:security-auditor"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/c-level-advisor/skills/chief-customer-officer-advisor/SKILL.md",
+    "name": "chief-customer-officer-advisor",
+    "desc_len": 561,
+    "fire": 0.201,
+    "nofire": 0.25,
+    "margin": -0.049,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/vpe-advisor/SKILL.md",
+    "name": "vpe-advisor",
+    "desc_len": 613,
+    "fire": 0.2152,
+    "nofire": 0.25,
+    "margin": -0.0348,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/aeo/SKILL.md",
+    "name": "aeo",
+    "desc_len": 736,
+    "fire": 0.2895,
+    "nofire": 0.4583,
+    "margin": -0.1688,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/pr-review-expert/SKILL.md",
+    "name": "pr-review-expert",
+    "desc_len": 136,
+    "fire": 0.4017,
+    "nofire": 0.0833,
+    "margin": 0.3183,
+    "source": "template:code-reviewer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/stress-test/SKILL.md",
+    "name": "stress-test",
+    "desc_len": 226,
+    "fire": 0.1817,
+    "nofire": 0.2083,
+    "margin": -0.0267,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/cs-aeo/SKILL.md",
+    "name": "cs-aeo",
+    "desc_len": 682,
+    "fire": 0.3152,
+    "nofire": 0.4583,
+    "margin": -0.1431,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "alirezarezvani/claude-skills",
+    "path": "ali/.gemini/skills/interview-system-designer/SKILL.md",
+    "name": "interview-system-designer",
+    "desc_len": 408,
+    "fire": 0.266,
+    "nofire": 0.25,
+    "margin": 0.016,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/attio-pack/skills/attio-local-dev-loop/SKILL.md",
+    "name": "attio-local-dev-loop",
+    "desc_len": 238,
+    "fire": 0.2017,
+    "nofire": 0.25,
+    "margin": -0.0483,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/.curated/deepgram-common-errors/SKILL.md",
+    "name": "deepgram-common-errors",
+    "desc_len": 297,
+    "fire": 0.1667,
+    "nofire": 0.1389,
+    "margin": 0.0278,
+    "source": "template:debugger"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/coreweave-pack/skills/coreweave-hello-world/SKILL.md",
+    "name": "coreweave-hello-world",
+    "desc_len": 263,
+    "fire": 0.1817,
+    "nofire": 0.2639,
+    "margin": -0.0822,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/webflow-pack/skills/webflow-rate-limits/SKILL.md",
+    "name": "webflow-rate-limits",
+    "desc_len": 391,
+    "fire": 0.1967,
+    "nofire": 0.3194,
+    "margin": -0.1228,
+    "source": "template:api-designer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/onenote-pack/skills/onenote-reference-architecture/SKILL.md",
+    "name": "onenote-reference-architecture",
+    "desc_len": 315,
+    "fire": 0.21,
+    "nofire": 0.2083,
+    "margin": 0.0017,
+    "source": "template:api-designer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/shopify-pack/skills/shopify-advanced-troubleshooting/SKILL.md",
+    "name": "shopify-advanced-troubleshooting",
+    "desc_len": 372,
+    "fire": 0.2083,
+    "nofire": 0.0833,
+    "margin": 0.125,
+    "source": "template:debugger"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/04-security-advanced/log-analysis-security/SKILL.md",
+    "name": "log-analysis-security",
+    "desc_len": 324,
+    "fire": 0.2352,
+    "nofire": 0.25,
+    "margin": -0.0148,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/palantir-pack/skills/palantir-common-errors/SKILL.md",
+    "name": "palantir-common-errors",
+    "desc_len": 299,
+    "fire": 0.2667,
+    "nofire": 0.1389,
+    "margin": 0.1278,
+    "source": "template:debugger"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/.curated/clerk-local-dev-loop/SKILL.md",
+    "name": "clerk-local-dev-loop",
+    "desc_len": 264,
+    "fire": 0.1817,
+    "nofire": 0.2083,
+    "margin": -0.0267,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/.curated/maintainx-ci-integration/SKILL.md",
+    "name": "maintainx-ci-integration",
+    "desc_len": 328,
+    "fire": 0.2217,
+    "nofire": 0.2083,
+    "margin": 0.0133,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/.curated/performing-security-testing/SKILL.md",
+    "name": "performing-security-testing",
+    "desc_len": 304,
+    "fire": 0.3217,
+    "nofire": 0.2778,
+    "margin": 0.0439,
+    "source": "template:security-auditor"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/15-api-development/sorting-parameter-handler/SKILL.md",
+    "name": "sorting-parameter-handler",
+    "desc_len": 346,
+    "fire": 0.221,
+    "nofire": 0.25,
+    "margin": -0.029,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/clari-pack/skills/clari-performance-tuning/SKILL.md",
+    "name": "clari-performance-tuning",
+    "desc_len": 326,
+    "fire": 0.16,
+    "nofire": 0.1667,
+    "margin": -0.0067,
+    "source": "template:data-engineer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/navan-pack/skills/navan-debug-bundle/SKILL.md",
+    "name": "navan-debug-bundle",
+    "desc_len": 221,
+    "fire": 0.2217,
+    "nofire": 0.25,
+    "margin": -0.0283,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/.curated/grammarly-ci-integration/SKILL.md",
+    "name": "grammarly-ci-integration",
+    "desc_len": 307,
+    "fire": 0.2017,
+    "nofire": 0.2083,
+    "margin": -0.0067,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/ai-agency/tonone/skills/lens-report/SKILL.md",
+    "name": "lens-report",
+    "desc_len": 245,
+    "fire": 0.2021,
+    "nofire": 0.2778,
+    "margin": -0.0756,
+    "source": "template:sql-generator"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/04-security-advanced/soc2-compliance-checker/SKILL.md",
+    "name": "soc2-compliance-checker",
+    "desc_len": 336,
+    "fire": 0.2352,
+    "nofire": 0.25,
+    "margin": -0.0148,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/.curated/vercel-rate-limits/SKILL.md",
+    "name": "vercel-rate-limits",
+    "desc_len": 351,
+    "fire": 0.1767,
+    "nofire": 0.3194,
+    "margin": -0.1428,
+    "source": "template:api-designer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/04-security-advanced/encryption-at-rest-checker/SKILL.md",
+    "name": "encryption-at-rest-checker",
+    "desc_len": 363,
+    "fire": 0.2352,
+    "nofire": 0.25,
+    "margin": -0.0148,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/onenote-pack/skills/onenote-upgrade-migration/SKILL.md",
+    "name": "onenote-upgrade-migration",
+    "desc_len": 301,
+    "fire": 0.1967,
+    "nofire": 0.2361,
+    "margin": -0.0394,
+    "source": "template:api-designer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/anthropic-pack/skills/anth-common-errors/SKILL.md",
+    "name": "anth-common-errors",
+    "desc_len": 333,
+    "fire": 0.2333,
+    "nofire": 0.2222,
+    "margin": 0.0111,
+    "source": "template:debugger"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/replit-pack/skills/replit-hello-world/SKILL.md",
+    "name": "replit-hello-world",
+    "desc_len": 330,
+    "fire": 0.1817,
+    "nofire": 0.2083,
+    "margin": -0.0267,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/testing/test-doubles-generator/skills/generating-test-doubles/SKILL.md",
+    "name": "generating-test-doubles",
+    "desc_len": 211,
+    "fire": 0.2267,
+    "nofire": 0.3333,
+    "margin": -0.1067,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/ai-agency/hyperflow/skills/dispatch/SKILL.md",
+    "name": "dispatch",
+    "desc_len": 337,
+    "fire": 0.1533,
+    "nofire": 0.1389,
+    "margin": 0.0144,
+    "source": "template:code-reviewer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/17-technical-docs/readme-generator/SKILL.md",
+    "name": "readme-generator",
+    "desc_len": 319,
+    "fire": 0.261,
+    "nofire": 0.25,
+    "margin": 0.011,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/palantir-pack/skills/palantir-core-workflow-a/SKILL.md",
+    "name": "palantir-core-workflow-a",
+    "desc_len": 319,
+    "fire": 0.18,
+    "nofire": 0.2,
+    "margin": -0.02,
+    "source": "template:data-engineer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/.curated/speak-hello-world/SKILL.md",
+    "name": "speak-hello-world",
+    "desc_len": 293,
+    "fire": 0.2217,
+    "nofire": 0.2083,
+    "margin": 0.0133,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/plugins/saas-packs/flexport-pack/skills/flexport-hello-world/SKILL.md",
+    "name": "flexport-hello-world",
+    "desc_len": 271,
+    "fire": 0.2217,
+    "nofire": 0.2083,
+    "margin": 0.0133,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/03-security-fundamentals/cookie-security-analyzer/SKILL.md",
+    "name": "cookie-security-analyzer",
+    "desc_len": 367,
+    "fire": 0.2495,
+    "nofire": 0.25,
+    "margin": -0.0005,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/.curated/exa-common-errors/SKILL.md",
+    "name": "exa-common-errors",
+    "desc_len": 264,
+    "fire": 0.2333,
+    "nofire": 0.2222,
+    "margin": 0.0111,
+    "source": "template:debugger"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/.curated/hex-hello-world/SKILL.md",
+    "name": "hex-hello-world",
+    "desc_len": 233,
+    "fire": 0.2217,
+    "nofire": 0.2083,
+    "margin": 0.0133,
+    "source": "template:test-writer"
+  },
+  {
+    "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+    "path": "jeremy/skills/.curated/building-terraform-modules/SKILL.md",
+    "name": "building-terraform-modules",
+    "desc_len": 358,
+    "fire": 0.261,
+    "nofire": 0.25,
+    "margin": 0.011,
+    "source": "template:skill-creator"
+  },
+  {
+    "repo": "vercel-labs/skills",
+    "path": "vercel/skills/find-skills/SKILL.md",
+    "name": "find-skills",
+    "desc_len": 303,
+    "fire": 0.2802,
+    "nofire": 0.3472,
+    "margin": -0.067,
+    "source": "template:skill-creator"
+  }
+]

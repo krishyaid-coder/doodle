@@ -6,13 +6,14 @@
 </p>
 
 <p align="center">
-  A linter for Claude <code>SKILL.md</code> files. Catches vague descriptions, oversized bodies, hardcoded paths, and silent trigger failures.
+  Measures whether your agent skill actually fires. Plus 16 static rules for the obvious stuff.
 </p>
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-1a1a1a?style=flat-square" alt="MIT"/></a>
-  <a href="./RULES.md"><img src="https://img.shields.io/badge/rules-15-1a1a1a?style=flat-square" alt="15 rules"/></a>
+  <a href="./RULES.md"><img src="https://img.shields.io/badge/rules-16-1a1a1a?style=flat-square" alt="16 rules"/></a>
   <a href="https://open-vsx.org/extension/krishyaid-coder/doodle-lint"><img src="https://img.shields.io/badge/vscode-open%20vsx-1a1a1a?style=flat-square" alt="Open VSX"/></a>
+  <a href="./docs/TRIGGER_SURFACE_REPORT.md"><img src="https://img.shields.io/badge/trigger%20surface-24%25%20mean-E5484D?style=flat-square" alt="Trigger Surface Report"/></a>
   <a href="./docs/QUALITY_REPORT.md"><img src="https://img.shields.io/badge/quality%20report-200%20skills-1a1a1a?style=flat-square" alt="Quality Report"/></a>
 </p>
 
@@ -20,9 +21,26 @@
 
 ## Overview
 
-In late 2025 Anthropic introduced `SKILL.md`, a markdown format with YAML frontmatter that extends Claude with custom skills. By mid-2026 more than 5,000 skills have been published across community marketplaces. Anthropic's own issue tracker attributes 80% of skill trigger failures to vague descriptions ([anthropics/skills#267](https://github.com/anthropics/skills/issues/267)), yet no static tooling for the format existed.
+`SKILL.md` is the [Agent Skills open standard](https://agentskills.io) — the format Claude Code, VS Code, Codex, Cursor, Gemini CLI and 30-odd other tools read to extend an agent with custom capabilities.
 
-doodle closes that gap. Twelve static rules, each citing Anthropic's authoring guide or a documented community issue, plus a trigger-accuracy harness for measuring whether skills actually fire on natural-language prompts.
+Most tooling for it checks whether a skill file is *well-formed*. doodle does that too, but the more interesting question is whether the skill will ever be **selected**. Agents pick skills by matching the user's request against skill descriptions, so a description can be perfectly formed and still lose every match:
+
+```
+description: Performs heuristic evaluation of committed changesets.
+user types:  "check my code"
+overlap:     0%
+```
+
+Nothing there is wrong. It just never runs, and a conventional linter reports the file as clean.
+
+doodle measures that gap two ways:
+
+- **`doodle surface`** — offline. Compares your description against realistic user phrasings and names the words you're missing. No API key.
+- **`doodle eval`** — empirical. Runs prompts through the model and reports how often the skill actually fires.
+
+Across 77 published skills, descriptions shared a mean of 24% of their vocabulary with realistic requests, and description *length* explained under 8% of the variance — see the [Trigger Surface Report](./docs/TRIGGER_SURFACE_REPORT.md).
+
+Plus 16 static rules, each citing the authoring guide or a documented community issue, for the conventional checks.
 
 ## Install
 
@@ -44,6 +62,9 @@ doodle --list-rules
 ```bash
 # Scaffold a new skill that passes the linter out of the box
 doodle init my-skill --eval          # creates ./my-skill/{SKILL.md,eval.yaml}
+
+# Measure trigger surface: does the description use the words users type?
+doodle surface path/to/SKILL.md
 
 # Lint a single skill
 doodle path/to/SKILL.md
@@ -210,6 +231,7 @@ doodle badge SKILL.md --link=https://github.com/you/your-skills   # override the
 | `desc/too-short`            | warning                  | no      | Description shorter than 60 characters or missing      |
 | `desc/no-trigger-phrase`    | warning                  | no      | No explicit "Use when" or "Trigger with" phrasing      |
 | `desc/vague-trigger`        | warning                  | no      | Trigger overlaps Claude's default behavior             |
+| `desc/weak-trigger-surface` | info                     | no      | Description doesn't use the vocabulary users type      |
 | `desc/typo`                 | info (off by default)    | no      | Description contains a likely misspelling              |
 | `body/too-long`             | warning                  | no      | Body longer than 500 lines                             |
 | `body/way-too-long`         | error                    | no      | Body longer than 1500 lines                            |
@@ -307,6 +329,7 @@ Config is discovered by walking up the directory tree. Force a path with `--conf
 | Docs (July)     | Quality Report refreshed to 200 skills across 6 repos                                        | shipped   |
 | v0.9            | Community eval-suite library — 10 category templates (code-reviewer, refactorer, sql-generator, docs-writer, test-writer, security-auditor, debugger, data-engineer, api-designer, skill-creator) | shipped   |
 | **v1.0**        | **Stable release. PyPI published. Pre-commit hook integration.**                             | shipped   |
+| v1.1            | `doodle surface` — offline trigger-surface analysis, plus the Trigger Surface Report on 77 published skills | shipped |
 | Phase 4         | Managed scanner and quality-badge dashboard for marketplace operators (paid service)         | exploring, waits for demand |
 | Phase 5         | LSP extraction for Neovim, Zed, JetBrains via the same rule engine                           | if demand |
 
@@ -320,7 +343,8 @@ Full methodology, per-repository breakdown, and raw data: [docs/QUALITY_REPORT.m
 
 ## Documentation
 
-- [Quality Report](./docs/QUALITY_REPORT.md): findings across 200 published skills, with methodology and raw data (July 2026 refresh)
+- [Trigger Surface Report](./docs/TRIGGER_SURFACE_REPORT.md): do published descriptions use the words users type? Methodology, raw data, and honest limitations
+- [Quality Report](./docs/QUALITY_REPORT.md): static-rule findings across 200 published skills, with methodology and raw data
 - [Architecture](./docs/ARCHITECTURE.md): diagrams, components, extension points, trade-offs
 - [Rule spec](./RULES.md): every rule with citation, example, and in-sample frequency
 - [Extending](./docs/EXTENDING.md): add a rule in Python or via `.doodle.toml`

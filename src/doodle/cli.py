@@ -67,9 +67,128 @@ def main(argv: list[str] | None = None) -> int:
         return _main_init(argv[1:])
     if argv and argv[0] == "badge":
         return _main_badge(argv[1:])
+    if argv and argv[0] == "surface":
+        return _main_surface(argv[1:])
     if argv and argv[0] == "lint":
         argv = argv[1:]
     return _main_lint(argv)
+
+
+def _main_surface(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(
+        prog="doodle surface",
+        description=(
+            "Analyse how well a skill's description matches the words users "
+            "actually type. Compares the description against realistic prompts "
+            "from the skill's own eval.yaml, or the closest built-in category."
+        ),
+    )
+    parser.add_argument("path", type=Path, help="Path to a SKILL.md file.")
+    parser.add_argument(
+        "--format",
+        choices=["text", "json"],
+        default="text",
+        help="Output format (default: text).",
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Show every prompt, not just the weakest matches.",
+    )
+    args = parser.parse_args(argv)
+
+    if not args.path.is_file():
+        print(f"doodle surface: file not found: {args.path}", file=sys.stderr)
+        return 3
+
+    from .trigger_surface import analyze, load_prompts_for_skill
+
+    skill = parse_skill(args.path)
+    desc = skill.frontmatter.get("description")
+    if not isinstance(desc, str) or not desc.strip():
+        print(f"doodle surface: {args.path} has no description to analyse.", file=sys.stderr)
+        return 3
+
+    prompts = load_prompts_for_skill(args.path, desc)
+    if prompts is None:
+        print(
+            "doodle surface: no prompt set available for this skill.\n"
+            "  Add an eval.yaml next to SKILL.md, or scaffold one with:\n"
+            f"    doodle init {skill.frontmatter.get('name', 'my-skill')} --template=<category> --eval",
+            file=sys.stderr,
+        )
+        return 3
+
+    should_fire, should_not_fire, source = prompts
+    result = analyze(desc, should_fire, should_not_fire, source)
+
+    if args.format == "json":
+        import json
+
+        payload = {
+            "file": str(args.path),
+            "source": result.source,
+            "fire_coverage": round(result.fire_coverage, 4),
+            "nofire_coverage": round(result.nofire_coverage, 4),
+            "margin": round(result.margin, 4),
+            "prompts": [
+                {
+                    "prompt": p.prompt,
+                    "expected_fire": p.expected_fire,
+                    "coverage": round(p.score, 4),
+                    "missing": list(p.missing),
+                }
+                for p in result.per_prompt
+            ],
+        }
+        sys.stdout.write(json.dumps(payload, indent=2) + "\n")
+        return 0
+
+    use_color = sys.stdout.isatty()
+
+    def dim(s: str) -> str:
+        return f"\x1b[2m{s}\x1b[0m" if use_color else s
+
+    def bold(s: str) -> str:
+        return f"\x1b[1m{s}\x1b[0m" if use_color else s
+
+    print(f"\n{args.path}")
+    print(dim(f"  prompts from: {result.source}"))
+    print()
+    print(f"  {bold('coverage of should-fire prompts')}   {result.fire_coverage:.0%}")
+    print(f"  {bold('coverage of should-not-fire')}       {result.nofire_coverage:.0%}")
+    print(f"  {bold('margin')}                            {result.margin:+.0%}")
+    print()
+
+    shown = [p for p in result.per_prompt if p.expected_fire]
+    if not args.all:
+        shown = list(result.weakest)
+        print(dim("  weakest should-fire matches (pass --all to see every prompt):"))
+    else:
+        print(dim("  should-fire prompts:"))
+    for p in shown:
+        print(f"    {p.score:>4.0%}  {p.prompt}")
+        if p.missing:
+            preview = ", ".join(p.missing[:6])
+            print(dim(f"          missing: {preview}"))
+
+    if args.all:
+        print()
+        print(dim("  should-not-fire prompts (lower is better):"))
+        for p in result.per_prompt:
+            if p.expected_fire:
+                continue
+            print(f"    {p.score:>4.0%}  {p.prompt}")
+
+    print()
+    if result.fire_coverage < 0.15:
+        print("  Weak trigger surface. The description likely underfires on natural phrasings.")
+    elif result.margin < -0.05:
+        print("  Poor discrimination. The description may fire on requests it should ignore.")
+    else:
+        print("  Trigger surface looks reasonable.")
+    print()
+    return 0
 
 
 def _main_badge(argv: list[str]) -> int:
